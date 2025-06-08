@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://pixmorphy.in/</loc>
+    <lastmod>2025-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Example inner pages -->
+  <url>
+    <loc>https://pixmorphy.in/resize</loc>
+    <lastmod>2025-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://pixmorphy.in/compress</loc>
+    <lastmod>2025-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://pixmorphy.in/about</loc>
+    <lastmod>2025-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.64</priority>
+  </url>
+
+</urlset>
