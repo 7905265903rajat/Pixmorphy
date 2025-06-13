@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PixMorph - Professional Image Editor | Resize, Compress & Enhance Images Online</title>
   <meta name="description" content="Professional online image editor to resize, compress and enhance photos. Free image resizer for social media, web optimization. Works on all devices - no software needed." />
-  <meta name="keywords" content="image resizer, photo editor, compress images, enhance photos, resize images online, social media image sizes, YouTube banner, Instagram post, Facebook cover, image optimization, free photo editor, online image tools" />
+  <meta name="keywords" content="image resizer online, compress image without losing quality, reduce image size online, image compressor online free, online photo resizer, best image compressor, resize image for Instagram, convert image to specific dimensions, online tool to resize image, compress JPEG image online, image size reducer online, resize image for LinkedIn profile, compress image for website, reduce PNG file size online, photo compressor tool, online image editor, resize images for free, bulk image resizer online, compress image for email, reduce photo size for WhatsApp, online image optimizer, resize image without losing quality, image size compressor for web, make image smaller online, free image resizer for social media" />
   <meta name="author" content="Rajat Gupta" />
   <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pixmorph.com/" />
+  <meta property="og:url" content="https://pixmorph.netlify.app/" />
   <meta property="og:title" content="PixMorph - Professional Image Editor | Resize Images Online" />
   <meta property="og:description" content="Professional online image editor to resize, compress and enhance photos. Free image resizer for social media, web optimization." />
   <meta property="og:image" content="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" />
@@ -21,7 +20,7 @@
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://pixmorph.com/" />
+  <meta property="twitter:url" content="https://pixmorph.netlify.app/" />
   <meta property="twitter:title" content="PixMorph - Professional Image Editor | Resize Images Online" />
   <meta property="twitter:description" content="Professional online image editor to resize, compress and enhance photos. Free image resizer for social media, web optimization." />
   <meta property="twitter:image" content="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" />
@@ -37,7 +36,7 @@
     "@type": "WebApplication",
     "name": "PixMorph - Professional Image Editor",
     "description": "Professional online image editor to resize, compress and enhance photos. Free image resizer for social media, web optimization.",
-    "url": "https://pixmorph.com/",
+    "url": "https://pixmorph.netlify.app/",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Any",
     "offers": {
@@ -71,38 +70,22 @@
     }
 
     :root {
-      --background: hsl(210, 40%, 98%);
-      --foreground: hsl(215, 25%, 15%);
-      --muted: hsl(210, 40%, 96%);
-      --muted-foreground: hsl(215, 16%, 47%);
-      --primary: hsl(217, 91%, 60%);
-      --primary-foreground: hsl(213, 100%, 99%);
-      --secondary: hsl(210, 40%, 96%);
-      --accent: hsl(162, 80%, 40%);
-      --border: hsl(214, 32%, 91%);
-      --input: hsl(214, 32%, 91%);
-      --radius: 0.75rem;
-    }
-
-    .dark {
-      --background: hsl(224, 71%, 4%);
-      --foreground: hsl(213, 31%, 91%);
-      --muted: hsl(223, 47%, 11%);
-      --muted-foreground: hsl(215, 20%, 65%);
-      --primary: hsl(217, 91%, 60%);
-      --primary-foreground: hsl(213, 100%, 99%);
-      --secondary: hsl(223, 47%, 11%);
-      --accent: hsl(162, 80%, 40%);
-      --border: hsl(216, 34%, 17%);
-      --input: hsl(216, 34%, 17%);
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --accent: #10b981;
+      --background: #f8fafc;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 0.5rem;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f8fafc;
-      color: var(--foreground);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
     }
 
     .container {
@@ -111,11 +94,14 @@
       padding: 0 1rem;
     }
 
-    /* Header Styles */
+    /* Header */
     .header {
-      background: white;
+      background: var(--surface);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .header-content {
@@ -130,29 +116,38 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
     }
 
     .logo-icon {
       width: 2.5rem;
       height: 2.5rem;
       background: var(--primary);
-      border-radius: 0.5rem;
+      border-radius: var(--radius);
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       font-size: 1.125rem;
+      overflow: hidden;
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .logo-text h1 {
       font-size: 1.25rem;
       font-weight: 700;
-      color: #1e293b;
+      color: var(--text);
     }
 
     .logo-text p {
       font-size: 0.75rem;
-      color: #64748b;
+      color: var(--text-muted);
     }
 
     .header-actions {
@@ -161,20 +156,46 @@
       gap: 1rem;
     }
 
-    .rate-btn {
-      background: var(--primary);
-      color: white;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      border: none;
+      border-radius: var(--radius);
       font-size: 0.875rem;
       font-weight: 500;
+      border: none;
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: all 0.2s;
+      text-decoration: none;
     }
 
-    .rate-btn:hover {
-      background: hsl(217, 91%, 55%);
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--background);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-accent:hover {
+      background: #059669;
     }
 
     /* Main Content */
@@ -188,29 +209,80 @@
     }
 
     .hero h1 {
-      font-size: 1.875rem;
+      font-size: 2.5rem;
       font-weight: 700;
-      color: #1e293b;
+      color: var(--text);
       margin-bottom: 1rem;
     }
 
     .hero p {
       font-size: 1.125rem;
-      color: #64748b;
-      max-width: 32rem;
-      margin: 0 auto;
+      color: var(--text-muted);
+      max-width: 42rem;
+      margin: 0 auto 2rem;
     }
 
-    /* Tabs */
-    .tabs {
-      background: white;
-      border-radius: 0.75rem;
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      margin: 0 auto 1rem;
+      background: var(--primary);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Editor Interface */
+    .editor-container {
+      background: var(--surface);
+      border-radius: var(--radius);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       border: 1px solid var(--border);
       margin-bottom: 2rem;
     }
 
-    .tab-list {
+    .tabs {
       display: flex;
       border-bottom: 1px solid var(--border);
       padding: 0 1.5rem;
@@ -224,13 +296,13 @@
       border-bottom: 2px solid transparent;
       font-size: 0.875rem;
       font-weight: 500;
-      color: var(--muted-foreground);
+      color: var(--text-muted);
       cursor: pointer;
       transition: all 0.2s;
     }
 
     .tab-trigger:hover {
-      color: #374151;
+      color: var(--text);
     }
 
     .tab-trigger.active {
@@ -247,7 +319,6 @@
       display: block;
     }
 
-    /* Grid Layout */
     .grid {
       display: grid;
       gap: 2rem;
@@ -257,8 +328,16 @@
       grid-template-columns: 1fr 1fr;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 768px) {
       .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .feature-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -272,7 +351,7 @@
       display: block;
       font-size: 0.875rem;
       font-weight: 500;
-      color: #374151;
+      color: var(--text);
       margin-bottom: 0.5rem;
     }
 
@@ -280,111 +359,60 @@
       width: 100%;
       padding: 0.5rem 0.75rem;
       border: 1px solid var(--border);
-      border-radius: 0.375rem;
+      border-radius: var(--radius);
       font-size: 0.875rem;
-      background: white;
+      background: var(--surface);
       transition: border-color 0.2s;
     }
 
     .input:focus, .select:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px hsla(217, 91%, 60%, 0.1);
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn-primary:hover:not(:disabled) {
-      background: hsl(217, 91%, 55%);
-    }
-
-    .btn-secondary {
-      background: white;
-      color: var(--foreground);
-      border: 1px solid var(--border);
-    }
-
-    .btn-secondary:hover {
-      background: var(--muted);
-    }
-
-    .btn-accent {
-      background: var(--accent);
-      color: white;
-    }
-
-    .btn-accent:hover {
-      background: hsl(162, 80%, 35%);
-    }
-
-    .btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
 
     /* Upload Zone */
     .upload-zone {
       border: 2px dashed var(--border);
-      border-radius: 0.5rem;
+      border-radius: var(--radius);
       padding: 2rem;
       text-align: center;
       cursor: pointer;
       transition: all 0.2s;
-      background: white;
+      background: var(--surface);
     }
 
     .upload-zone:hover,
     .upload-zone.dragover {
       border-color: var(--primary);
-      background: hsl(217, 91%, 60%, 0.05);
+      background: rgba(59, 130, 246, 0.05);
     }
 
     .upload-zone i {
       font-size: 3rem;
-      color: #94a3b8;
+      color: var(--text-muted);
       margin-bottom: 0.5rem;
     }
 
-    .upload-zone .upload-text {
+    .upload-text {
       font-size: 0.875rem;
-      color: #64748b;
+      color: var(--text-muted);
       margin-bottom: 0.25rem;
     }
 
-    .upload-zone .upload-subtext {
+    .upload-subtext {
       font-size: 0.75rem;
-      color: #94a3b8;
-    }
-
-    .hidden {
-      display: none !important;
+      color: var(--text-muted);
     }
 
     /* Progress Bar */
     .progress {
       width: 100%;
       height: 0.5rem;
-      background: var(--muted);
+      background: var(--background);
       border-radius: 0.25rem;
       overflow: hidden;
+      margin: 1rem 0;
     }
 
     .progress-bar {
@@ -393,32 +421,19 @@
       transition: width 0.3s ease;
     }
 
-    /* Info Cards */
-    .info-card {
-      background: var(--muted);
-      border-radius: 0.5rem;
-      padding: 1rem;
-    }
-
-    .info-card h4 {
-      font-weight: 500;
-      color: #1e293b;
-      margin-bottom: 0.5rem;
-    }
-
     /* Image Preview */
     .image-preview {
       border: 1px solid var(--border);
-      border-radius: 0.5rem;
+      border-radius: var(--radius);
       padding: 1rem;
-      background: white;
+      background: var(--surface);
       text-align: center;
     }
 
     .image-preview img {
       max-width: 100%;
       height: auto;
-      border-radius: 0.5rem;
+      border-radius: var(--radius);
     }
 
     .empty-state {
@@ -427,39 +442,97 @@
       align-items: center;
       justify-content: center;
       height: 16rem;
-      background: var(--muted);
-      border-radius: 0.5rem;
+      background: var(--background);
+      border-radius: var(--radius);
       border: 2px dashed var(--border);
     }
 
     .empty-state i {
       font-size: 4rem;
-      color: #94a3b8;
+      color: var(--text-muted);
       margin-bottom: 0.5rem;
     }
 
     .empty-state p {
-      color: #64748b;
+      color: var(--text-muted);
     }
 
-    /* Error Styles */
-    .error {
-      background: #fef2f2;
-      border: 1px solid #fecaca;
-      border-radius: 0.5rem;
+    /* Feedback Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal h3 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .feedback-form textarea {
+      width: 100%;
+      min-height: 100px;
       padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
       margin-top: 1rem;
     }
 
-    .error-content {
-      display: flex;
-      align-items: center;
-      color: #dc2626;
+    /* Footer */
+    .footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .footer p {
+      color: var(--text-muted);
       font-size: 0.875rem;
     }
 
-    .error-content i {
-      margin-right: 0.5rem;
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
     }
 
     /* Slider */
@@ -467,7 +540,7 @@
       width: 100%;
       height: 8px;
       border-radius: 4px;
-      background: var(--muted);
+      background: var(--background);
       outline: none;
       -webkit-appearance: none;
       appearance: none;
@@ -494,1198 +567,853 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    /* Toggle Buttons */
-    .toggle-group {
-      background: var(--muted);
-      border-radius: 0.5rem;
-      padding: 0.25rem;
-      display: flex;
-    }
-
-    .toggle-btn {
-      padding: 0.25rem 0.75rem;
-      font-size: 0.875rem;
-      border: none;
-      border-radius: 0.25rem;
-      background: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .toggle-btn.active {
-      background: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    /* Features Grid */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 4rem 0;
-    }
-
-    .feature-card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      border: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .feature-icon {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-      font-size: 1.25rem;
-    }
-
-    .feature-icon.security {
-      background: hsl(217, 91%, 60%, 0.1);
-      color: var(--primary);
-    }
-
-    .feature-icon.speed {
-      background: hsl(162, 80%, 40%, 0.1);
-      color: var(--accent);
-    }
-
-    .feature-icon.mobile {
-      background: hsl(271, 91%, 60%, 0.1);
-      color: #8b5cf6;
-    }
-
-    .feature-card h3 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: #1e293b;
-      margin-bottom: 0.5rem;
-    }
-
-    .feature-card p {
-      font-size: 0.875rem;
-      color: #64748b;
-    }
-
-    /* Footer */
-    .footer {
-      background: white;
-      border-top: 1px solid var(--border);
-      margin-top: 4rem;
-    }
-
-    .footer-content {
-      padding: 2rem 1rem;
-      text-align: center;
-      color: #64748b;
-      font-size: 0.875rem;
-    }
-
-    /* Utility Classes */
-    .flex {
-      display: flex;
-    }
-
-    .items-center {
-      align-items: center;
-    }
-
-    .justify-center {
-      justify-content: center;
-    }
-
-    .gap-2 {
-      gap: 0.5rem;
-    }
-
-    .gap-4 {
-      gap: 1rem;
-    }
-
-    .w-full {
-      width: 100%;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .mt-4 {
+    /* Error Styles */
+    .error {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: var(--radius);
+      padding: 0.75rem;
       margin-top: 1rem;
     }
 
-    .mb-4 {
-      margin-bottom: 1rem;
+    .error-content {
+      display: flex;
+      align-items: center;
+      color: #dc2626;
+      font-size: 0.875rem;
     }
 
-    .space-y-4 > * + * {
-      margin-top: 1rem;
-    }
-
-    .space-y-6 > * + * {
-      margin-top: 1.5rem;
+    .error-content i {
+      margin-right: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <div class="logo">
+        <a href="#" class="logo" onclick="showHome()">
           <div class="logo-icon">
-            <img src="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" alt="PixMorph Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 0.5rem;">
+            <img src="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" alt="PixMorph Logo" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=&quot;fas fa-image&quot;></i>'">
           </div>
           <div class="logo-text">
             <h1>PixMorph</h1>
             <p>Professional Image Editor</p>
           </div>
-        </div>
+        </a>
         <div class="header-actions">
-          <span style="font-size: 0.875rem; color: #64748b;">Free Online Tool</span>
-          <button class="rate-btn">
-            <i class="fas fa-star" style="margin-right: 0.25rem;"></i>
-            Rate Us
+          <button class="btn btn-secondary" onclick="downloadLogs()">
+            <i class="fas fa-download"></i> Download Logs
+          </button>
+          <button class="btn btn-primary" onclick="showFeedback()">
+            <i class="fas fa-star"></i> Rate Us
           </button>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
   <main class="main">
     <div class="container">
-      <!-- Hero Section -->
-      <div class="hero">
-        <h1>Free Online Image Editor - Resize, Compress & Enhance Photos</h1>
-        <p>Professional image editing tools for social media, web optimization, and photo enhancement. Resize images for Instagram, YouTube, Facebook. Compress photos for faster websites. All free, no signup required.</p>
-        
-        <!-- Key Benefits -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem auto; max-width: 800px; text-align: center;">
-          <div style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-            <strong style="color: var(--primary);">✓ Social Media Ready</strong>
-            <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.5rem;">Perfect sizes for Instagram, YouTube, Facebook, Twitter</p>
+      <!-- Home Page -->
+      <div id="home-page">
+        <div class="hero">
+          <h1>Professional Image Editor</h1>
+          <p>Resize, compress, and enhance your images with our powerful online tools. Choose from our professional features below to get started.</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card" onclick="showResizer()">
+            <div class="feature-icon">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </div>
+            <h3>Image Resizer</h3>
+            <p>Resize images for social media, websites, and more. Maintain quality while adjusting dimensions.</p>
           </div>
-          <div style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-            <strong style="color: var(--primary);">✓ Web Optimization</strong>
-            <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.5rem;">Compress images for faster loading websites</p>
+
+          <div class="feature-card" onclick="showCompressor()">
+            <div class="feature-icon">
+              <i class="fas fa-compress-alt"></i>
+            </div>
+            <h3>Image Compressor</h3>
+            <p>Reduce file size without losing quality. Perfect for web optimization and faster loading.</p>
           </div>
-          <div style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-            <strong style="color: var(--primary);">✓ 100% Private</strong>
-            <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.5rem;">All processing happens in your browser</p>
+
+          <div class="feature-card" onclick="showEnhancer()">
+            <div class="feature-icon">
+              <i class="fas fa-magic"></i>
+            </div>
+            <h3>Image Enhancer</h3>
+            <p>Apply filters and effects to improve your photos. Professional results in seconds.</p>
           </div>
         </div>
       </div>
 
-      <!-- Image Editor -->
-      <div class="tabs">
-        <div class="tab-list">
-          <button class="tab-trigger active" data-tab="resize">
-            <i class="fas fa-expand-arrows-alt" style="margin-right: 0.5rem;"></i>
-            Resize Images
-          </button>
-          <button class="tab-trigger" data-tab="compress">
-            <i class="fas fa-compress-arrows-alt" style="margin-right: 0.5rem;"></i>
-            Compress Images
-          </button>
-          <button class="tab-trigger" data-tab="enhance">
-            <i class="fas fa-magic" style="margin-right: 0.5rem;"></i>
-            Enhance Images
-          </button>
-        </div>
+      <!-- Editor Interface -->
+      <div id="editor-page" class="hidden">
+        <div class="editor-container">
+          <div class="tabs">
+            <button class="tab-trigger active" data-tab="resize">
+              <i class="fas fa-expand-arrows-alt"></i> Resize
+            </button>
+            <button class="tab-trigger" data-tab="compress">
+              <i class="fas fa-compress-alt"></i> Compress
+            </button>
+            <button class="tab-trigger" data-tab="enhance">
+              <i class="fas fa-magic"></i> Enhance
+            </button>
+          </div>
 
-        <!-- Resize Tool -->
-        <div id="resize-tab" class="tab-content active">
-          <div class="grid grid-2">
-            <div class="space-y-6">
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1e293b;">Upload & Configure</h3>
-              
-              <div class="upload-zone" id="resize-upload" onclick="document.getElementById('resize-file').click()">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <div class="upload-text">
-                  <span style="font-weight: 500; color: var(--primary);">Click to upload</span> or drag and drop
+          <!-- Resize Tab -->
+          <div id="resize-content" class="tab-content active">
+            <div class="grid grid-2">
+              <div>
+                <h3>Upload & Resize Image</h3>
+                <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <div class="upload-text">Click to upload or drag & drop</div>
+                  <div class="upload-subtext">Supports JPG, PNG, WebP (Max 10MB)</div>
                 </div>
-                <p class="upload-subtext">PNG, JPG, JPEG up to 10MB</p>
-                <input type="file" id="resize-file" accept="image/*" class="hidden">
-              </div>
-
-              <div class="form-group">
-                <label class="label">Platform Presets</label>
-                <select id="platform-select" class="select">
-                  <option value="custom">Custom Size</option>
-                  <option value="youtube-profile">YouTube Profile (800×800)</option>
-                  <option value="youtube-banner">YouTube Banner (2560×1440)</option>
-                  <option value="instagram-profile">Instagram Profile (110×110)</option>
-                  <option value="instagram-post">Instagram Post (1080×1080)</option>
-                  <option value="facebook-profile">Facebook Profile (170×170)</option>
-                  <option value="facebook-cover">Facebook Cover (820×312)</option>
-                  <option value="twitter-header">Twitter Header (1500×500)</option>
-                  <option value="linkedin-banner">LinkedIn Banner (1584×396)</option>
-                </select>
-              </div>
-
-              <div class="grid grid-2">
+                <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="handleFile(this.files[0])">
+                
                 <div class="form-group">
-                  <label class="label">Width (px)</label>
-                  <input type="number" id="width-input" class="input" placeholder="1080">
+                  <label class="label">Resize Options</label>
+                  <select class="select" id="resizePreset" onchange="updateDimensions()">
+                    <option value="custom">Custom Size</option>
+                    <option value="instagram">Instagram Post (1080x1080)</option>
+                    <option value="facebook">Facebook Cover (820x312)</option>
+                    <option value="youtube">YouTube Thumbnail (1280x720)</option>
+                    <option value="linkedin">LinkedIn Banner (1584x396)</option>
+                    <option value="twitter">Twitter Header (1500x500)</option>
+                  </select>
                 </div>
-                <div class="form-group">
-                  <label class="label">Height (px)</label>
-                  <input type="number" id="height-input" class="input" placeholder="1080">
-                </div>
-              </div>
 
-              <div class="flex gap-4">
-                <button id="resize-btn" class="btn btn-primary w-full">
-                  <i class="fas fa-expand-arrows-alt" style="margin-right: 0.5rem;"></i>
-                  Resize Image
-                </button>
-                <button id="resize-reset" class="btn btn-secondary">
-                  <i class="fas fa-undo" style="margin-right: 0.5rem;"></i>
-                  Reset
-                </button>
-              </div>
-
-              <div id="resize-progress" class="hidden">
-                <div class="progress">
-                  <div class="progress-bar" id="resize-progress-bar"></div>
-                </div>
-                <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.5rem;">Processing image...</p>
-              </div>
-
-              <div id="resize-error" class="error hidden">
-                <div class="error-content">
-                  <i class="fas fa-exclamation-triangle"></i>
-                  <span id="resize-error-text"></span>
-                </div>
-              </div>
-            </div>
-
-            <div class="space-y-6">
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1e293b;">Preview & Download</h3>
-              
-              <div id="resize-preview" class="hidden">
-                <div class="info-card">
-                  <h4>Image Information</h4>
-                  <div class="grid grid-2" style="font-size: 0.875rem; gap: 1rem; margin-top: 0.5rem;">
-                    <div>
-                      <span style="color: #64748b;">Original:</span>
-                      <div id="resize-original-info" style="font-weight: 500;"></div>
-                    </div>
-                    <div>
-                      <span style="color: #64748b;">New Size:</span>
-                      <div id="resize-new-info" style="font-weight: 500;"></div>
-                    </div>
+                <div class="grid grid-2">
+                  <div class="form-group">
+                    <label class="label">Width (px)</label>
+                    <input type="number" class="input" id="width" placeholder="Width">
+                  </div>
+                  <div class="form-group">
+                    <label class="label">Height (px)</label>
+                    <input type="number" class="input" id="height" placeholder="Height">
                   </div>
                 </div>
 
+                <button class="btn btn-primary" onclick="processImage('resize')" id="resizeBtn" disabled>
+                  <i class="fas fa-expand-arrows-alt"></i> Resize Image
+                </button>
+              </div>
+
+              <div>
+                <h3>Preview</h3>
                 <div class="image-preview">
-                  <img id="resize-result" alt="Resized Preview">
+                  <div class="empty-state" id="previewEmpty">
+                    <i class="fas fa-image"></i>
+                    <p>Upload an image to see preview</p>
+                  </div>
+                  <img id="previewImage" class="hidden" alt="Preview">
                 </div>
-
-                <button id="resize-download" class="btn btn-accent w-full">
-                  <i class="fas fa-download" style="margin-right: 0.5rem;"></i>
-                  Download Resized Image
-                </button>
-              </div>
-
-              <div id="resize-empty" class="empty-state">
-                <i class="fas fa-image"></i>
-                <p>Upload an image to see preview</p>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Compress Tool -->
-        <div id="compress-tab" class="tab-content">
-          <div class="grid grid-2">
-            <div class="space-y-6">
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1e293b;">Compress Settings</h3>
-              
-              <div class="upload-zone" id="compress-upload" onclick="document.getElementById('compress-file').click()">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <div class="upload-text">
-                  <span style="font-weight: 500; color: var(--primary);">Click to upload</span> or drag and drop
+          <!-- Compress Tab -->
+          <div id="compress-content" class="tab-content">
+            <div class="grid grid-2">
+              <div>
+                <h3>Upload & Compress Image</h3>
+                <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <div class="upload-text">Click to upload or drag & drop</div>
+                  <div class="upload-subtext">Supports JPG, PNG, WebP (Max 10MB)</div>
                 </div>
-                <p class="upload-subtext">PNG, JPG, JPEG up to 10MB</p>
-                <input type="file" id="compress-file" accept="image/*" class="hidden">
-              </div>
-
-              <div class="form-group">
-                <label class="label">
-                  Compression Quality: <span id="quality-value" style="font-weight: 600; color: var(--primary);">70%</span>
-                </label>
-                <input type="range" id="quality-slider" class="slider" min="10" max="100" value="70">
-                <div class="flex" style="justify-content: space-between; font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;">
-                  <span>Smaller file</span>
-                  <span>Better quality</span>
+                
+                <div class="form-group">
+                  <label class="label">Quality: <span id="qualityValue">80</span>%</label>
+                  <input type="range" class="slider" id="quality" min="10" max="100" value="80" oninput="updateQuality(this.value)">
                 </div>
-              </div>
 
-              <div class="form-group">
-                <label class="label">Output Format</label>
-                <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 0.5rem;">
-                  <label class="btn btn-secondary" style="padding: 0.75rem; cursor: pointer;">
-                    <input type="radio" name="format" value="jpeg" checked style="margin-right: 0.5rem;">
-                    JPEG
-                  </label>
-                  <label class="btn btn-secondary" style="padding: 0.75rem; cursor: pointer;">
-                    <input type="radio" name="format" value="png" style="margin-right: 0.5rem;">
-                    PNG
-                  </label>
-                  <label class="btn btn-secondary" style="padding: 0.75rem; cursor: pointer;">
-                    <input type="radio" name="format" value="webp" style="margin-right: 0.5rem;">
-                    WebP
-                  </label>
-                </div>
-              </div>
-
-              <div class="flex gap-4">
-                <button id="compress-btn" class="btn btn-primary w-full">
-                  <i class="fas fa-compress-arrows-alt" style="margin-right: 0.5rem;"></i>
-                  Compress Image
-                </button>
-                <button id="compress-reset" class="btn btn-secondary">
-                  <i class="fas fa-undo" style="margin-right: 0.5rem;"></i>
-                  Reset
+                <button class="btn btn-primary" onclick="processImage('compress')" id="compressBtn" disabled>
+                  <i class="fas fa-compress-alt"></i> Compress Image
                 </button>
               </div>
 
-              <div id="compress-progress" class="hidden">
-                <div class="progress">
-                  <div class="progress-bar" id="compress-progress-bar"></div>
-                </div>
-                <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.5rem;">Compressing image...</p>
-              </div>
-            </div>
-
-            <div class="space-y-6">
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1e293b;">Compression Result</h3>
-              
-              <div id="compress-preview" class="hidden">
-                <div class="info-card">
-                  <h4>Compression Summary</h4>
-                  <div class="grid grid-2" style="font-size: 0.875rem; gap: 1rem; margin-top: 0.5rem;">
-                    <div>
-                      <span style="color: #64748b;">Original Size:</span>
-                      <div id="compress-original-size" style="font-weight: 500;"></div>
-                    </div>
-                    <div>
-                      <span style="color: #64748b;">Compressed Size:</span>
-                      <div id="compress-new-size" style="font-weight: 500;"></div>
-                    </div>
-                  </div>
-                  <div style="padding-top: 0.5rem; border-top: 1px solid var(--border); margin-top: 0.75rem;">
-                    <span style="color: #64748b;">Space Saved:</span>
-                    <div id="compress-savings" style="font-weight: 500; color: var(--accent);"></div>
-                  </div>
-                </div>
-
+              <div>
+                <h3>Preview</h3>
                 <div class="image-preview">
-                  <img id="compress-result" alt="Compressed Preview">
-                </div>
-
-                <button id="compress-download" class="btn btn-accent w-full">
-                  <i class="fas fa-download" style="margin-right: 0.5rem;"></i>
-                  Download Compressed Image
-                </button>
-              </div>
-
-              <div id="compress-empty" class="empty-state">
-                <i class="fas fa-compress"></i>
-                <p>Upload an image to compress</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Enhance Tool -->
-        <div id="enhance-tab" class="tab-content">
-          <div class="grid grid-2">
-            <div class="space-y-6">
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1e293b;">Enhancement Controls</h3>
-              
-              <div class="upload-zone" id="enhance-upload" onclick="document.getElementById('enhance-file').click()">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <div class="upload-text">
-                  <span style="font-weight: 500; color: var(--primary);">Click to upload</span> or drag and drop
-                </div>
-                <p class="upload-subtext">PNG, JPG, JPEG up to 10MB</p>
-                <input type="file" id="enhance-file" accept="image/*" class="hidden">
-              </div>
-
-              <div class="space-y-4">
-                <div class="form-group">
-                  <label class="label">
-                    Brightness: <span id="brightness-value" style="font-weight: 600; color: var(--primary);">100%</span>
-                  </label>
-                  <input type="range" id="brightness-slider" class="slider" min="50" max="200" value="100">
-                </div>
-
-                <div class="form-group">
-                  <label class="label">
-                    Contrast: <span id="contrast-value" style="font-weight: 600; color: var(--primary);">100%</span>
-                  </label>
-                  <input type="range" id="contrast-slider" class="slider" min="50" max="200" value="100">
-                </div>
-
-                <div class="form-group">
-                  <label class="label">
-                    Saturation: <span id="saturation-value" style="font-weight: 600; color: var(--primary);">100%</span>
-                  </label>
-                  <input type="range" id="saturation-slider" class="slider" min="0" max="200" value="100">
-                </div>
-
-                <div class="form-group">
-                  <label class="label">
-                    Blur: <span id="blur-value" style="font-weight: 600; color: var(--primary);">0px</span>
-                  </label>
-                  <input type="range" id="blur-slider" class="slider" min="0" max="10" value="0">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="label">Quick Presets</label>
-                <div class="grid grid-2" style="gap: 0.5rem;">
-                  <button class="btn btn-secondary" data-preset="none">None</button>
-                  <button class="btn btn-secondary" data-preset="vivid">Vivid</button>
-                  <button class="btn btn-secondary" data-preset="vintage">Vintage</button>
-                  <button class="btn btn-secondary" data-preset="dramatic">Dramatic</button>
-                </div>
-              </div>
-
-              <div class="flex gap-4">
-                <button id="enhance-btn" class="btn btn-primary w-full">
-                  <i class="fas fa-magic" style="margin-right: 0.5rem;"></i>
-                  Apply Enhancement
-                </button>
-                <button id="enhance-reset" class="btn btn-secondary">
-                  <i class="fas fa-undo" style="margin-right: 0.5rem;"></i>
-                  Reset
-                </button>
-              </div>
-            </div>
-
-            <div class="space-y-6">
-              <h3 style="font-size: 1.125rem; font-weight: 600; color: #1e293b;">Before & After</h3>
-              
-              <div id="enhance-preview" class="hidden">
-                <div class="flex justify-center mb-4">
-                  <div class="toggle-group">
-                    <button id="show-original" class="toggle-btn active">Original</button>
-                    <button id="show-enhanced" class="toggle-btn">Enhanced</button>
+                  <div class="empty-state" id="previewEmpty">
+                    <i class="fas fa-image"></i>
+                    <p>Upload an image to see preview</p>
                   </div>
+                  <img id="previewImage" class="hidden" alt="Preview">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enhance Tab -->
+          <div id="enhance-content" class="tab-content">
+            <div class="grid grid-2">
+              <div>
+                <h3>Upload & Enhance Image</h3>
+                <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <div class="upload-text">Click to upload or drag & drop</div>
+                  <div class="upload-subtext">Supports JPG, PNG, WebP (Max 10MB)</div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="label">Filter</label>
+                  <select class="select" id="filter">
+                    <option value="none">No Filter</option>
+                    <option value="brightness">Brightness</option>
+                    <option value="contrast">Contrast</option>
+                    <option value="saturate">Saturation</option>
+                    <option value="sepia">Sepia</option>
+                    <option value="grayscale">Grayscale</option>
+                    <option value="blur">Blur</option>
+                  </select>
                 </div>
 
-                <div class="image-preview">
-                  <img id="enhance-result" alt="Enhanced Preview">
+                <div class="form-group">
+                  <label class="label">Intensity: <span id="intensityValue">100</span>%</label>
+                  <input type="range" class="slider" id="intensity" min="0" max="200" value="100" oninput="updateIntensity(this.value)">
                 </div>
 
-                <button id="enhance-download" class="btn btn-accent w-full">
-                  <i class="fas fa-download" style="margin-right: 0.5rem;"></i>
-                  Download Enhanced Image
+                <button class="btn btn-primary" onclick="processImage('enhance')" id="enhanceBtn" disabled>
+                  <i class="fas fa-magic"></i> Enhance Image
                 </button>
               </div>
 
-              <div id="enhance-empty" class="empty-state">
-                <i class="fas fa-magic"></i>
-                <p>Upload an image to enhance</p>
+              <div>
+                <h3>Preview</h3>
+                <div class="image-preview">
+                  <div class="empty-state" id="previewEmpty">
+                    <i class="fas fa-image"></i>
+                    <p>Upload an image to see preview</p>
+                  </div>
+                  <img id="previewImage" class="hidden" alt="Preview">
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- SEO Content Section -->
-      <section style="margin: 4rem 0; padding: 2rem; background: white; border-radius: 0.75rem; border: 1px solid var(--border);">
-        <h2 style="font-size: 1.5rem; font-weight: 600; color: #1e293b; margin-bottom: 1rem; text-align: center;">Professional Image Editing Made Simple</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
-          <div>
-            <h3 style="font-size: 1.125rem; font-weight: 600; color: #1e293b; margin-bottom: 0.5rem;">📐 Image Resizer Tool</h3>
-            <p style="color: #64748b; font-size: 0.875rem; line-height: 1.5;">
-              Resize images for social media platforms with pre-configured dimensions. Perfect for Instagram posts (1080x1080), YouTube banners (2560x1440), Facebook covers (820x312), and more. Custom dimensions supported for any project.
-            </p>
-          </div>
-          
-          <div>
-            <h3 style="font-size: 1.125rem; font-weight: 600; color: #1e293b; margin-bottom: 0.5rem;">🗜️ Image Compressor</h3>
-            <p style="color: #64748b; font-size: 0.875rem; line-height: 1.5;">
-              Reduce image file sizes by up to 90% without losing quality. Choose from JPEG, PNG, or WebP formats. Ideal for website optimization, email attachments, and faster page loading.
-            </p>
-          </div>
-          
-          <div>
-            <h3 style="font-size: 1.125rem; font-weight: 600; color: #1e293b; margin-bottom: 0.5rem;">✨ Photo Enhancer</h3>
-            <p style="color: #64748b; font-size: 0.875rem; line-height: 1.5;">
-              Enhance photos with professional filters and adjustments. Control brightness, contrast, saturation, and blur. Apply preset filters like Vivid, Vintage, or Dramatic for instant improvements.
-            </p>
-          </div>
+        <div class="progress hidden" id="progress">
+          <div class="progress-bar" id="progressBar"></div>
         </div>
-        
-        <div style="background: #f8fafc; padding: 1.5rem; border-radius: 0.5rem; margin: 2rem 0;">
-          <h3 style="font-size: 1.125rem; font-weight: 600; color: #1e293b; margin-bottom: 1rem;">Why Choose PixMorph?</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-            <div>
-              <strong style="color: var(--primary);">🔒 100% Secure</strong>
-              <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.25rem;">All image processing happens locally in your browser. Your photos never leave your device.</p>
-            </div>
-            <div>
-              <strong style="color: var(--primary);">⚡ No Registration</strong>
-              <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.25rem;">Start editing immediately without creating accounts or downloading software.</p>
-            </div>
-            <div>
-              <strong style="color: var(--primary);">📱 Works Everywhere</strong>
-              <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.25rem;">Compatible with iPhone, iPad, Android, Windows, Mac, and all modern browsers.</p>
-            </div>
-            <div>
-              <strong style="color: var(--primary);">🆓 Completely Free</strong>
-              <p style="font-size: 0.875rem; color: #64748b; margin-top: 0.25rem;">No hidden costs, watermarks, or limitations. All features available for free.</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Features Section -->
-      <div class="features">
-        <div class="feature-card">
-          <div class="feature-icon security">
-            <i class="fas fa-shield-alt"></i>
+        <div id="result" class="hidden">
+          <h3>Result</h3>
+          <div class="image-preview">
+            <img id="resultImage" alt="Result">
           </div>
-          <h3>Secure & Private</h3>
-          <p>All processing happens in your browser. Your images never leave your device.</p>
+          <button class="btn btn-accent" onclick="downloadImage()" id="downloadBtn">
+            <i class="fas fa-download"></i> Download Image
+          </button>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon speed">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <h3>Lightning Fast</h3>
-          <p>Optimized algorithms ensure quick processing without compromising quality.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon mobile">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>Mobile Friendly</h3>
-          <p>Works perfectly on all devices - desktop, tablet, and mobile.</p>
-        </div>
+
+        <button class="btn btn-secondary" onclick="showHome()" style="margin-top: 2rem;">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </button>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- Feedback Modal -->
+  <div id="feedbackModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Share Your Feedback</h3>
+      <form class="feedback-form" onsubmit="submitFeedback(event)">
+        <div class="form-group">
+          <label class="label">Rating</label>
+          <select class="select" id="rating" required>
+            <option value="">Select Rating</option>
+            <option value="5">5 Stars - Excellent</option>
+            <option value="4">4 Stars - Very Good</option>
+            <option value="3">3 Stars - Good</option>
+            <option value="2">2 Stars - Fair</option>
+            <option value="1">1 Star - Poor</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="label">Comments</label>
+          <textarea id="comments" placeholder="Tell us about your experience..." required></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" onclick="hideFeedback()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <p>&copy; 2025 PixMorph by Rajat Gupta. Built with ❤️ for creators worldwide.</p>
+      <div class="footer-links">
+        <a href="#" onclick="showFeedback()">Feedback</a>
+        <a href="#" onclick="downloadLogs()">Download Logs</a>
+        <a href="mailto:support@pixmorph.com">Contact</a>
       </div>
+      <p>&copy; 2024 PixMorph. Created by Rajat Gupta. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
     // Global variables
-    let currentFile = null;
-    let originalCanvas = null;
-    let originalImageUrl = '';
-    let enhancedImageUrl = '';
-
-    // Platform sizes for resizing
-    const platformSizes = {
-      "youtube-profile": [800, 800],
-      "youtube-banner": [2560, 1440],
-      "instagram-profile": [110, 110],
-      "instagram-post": [1080, 1080],
-      "facebook-profile": [170, 170],
-      "facebook-cover": [820, 312],
-      "twitter-header": [1500, 500],
-      "linkedin-banner": [1584, 396]
+    let currentImage = null;
+    let processedImage = null;
+    let logs = {
+      visitors: [],
+      feedback: [],
+      daily: []
     };
+    
+    // GitHub logs configuration - update this URL after uploading logs file
+    const LOG_FILE_URL = 'https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/logs/pixmorph-logs.csv';
 
-    // Enhancement presets
-    const presets = {
-      none: { brightness: 100, contrast: 100, saturation: 100, blur: 0 },
-      vivid: { brightness: 110, contrast: 120, saturation: 150, blur: 0 },
-      vintage: { brightness: 95, contrast: 85, saturation: 70, blur: 1 },
-      dramatic: { brightness: 85, contrast: 140, saturation: 110, blur: 0 }
-    };
-
-    // Utility functions
-    function formatFileSize(bytes) {
-      if (bytes === 0) return '0 Bytes';
-      const k = 1024;
-      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-      const i = Math.floor(Math.log(bytes) / Math.log(k));
-      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-    }
-
-    function validateImageFile(file) {
-      if (!file.type.startsWith('image/')) {
-        return { isValid: false, error: 'Please select a valid image file (PNG, JPG, JPEG)' };
-      }
-      const maxSize = 10 * 1024 * 1024; // 10MB
-      if (file.size > maxSize) {
-        return { isValid: false, error: 'File size must be less than 10MB' };
-      }
-      const supportedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
-      if (!supportedTypes.includes(file.type)) {
-        return { isValid: false, error: 'Unsupported file format. Please use PNG, JPG, JPEG, or WebP' };
-      }
-      return { isValid: true };
-    }
-
-    function showError(elementId, message) {
-      const errorEl = document.getElementById(elementId);
-      const textEl = document.getElementById(elementId + '-text');
-      textEl.textContent = message;
-      errorEl.classList.remove('hidden');
-    }
-
-    function hideError(elementId) {
-      document.getElementById(elementId).classList.add('hidden');
-    }
-
-    function showProgress(elementId, progress) {
-      const progressEl = document.getElementById(elementId);
-      const barEl = document.getElementById(elementId + '-bar');
-      progressEl.classList.remove('hidden');
-      barEl.style.width = progress + '%';
-    }
-
-    function hideProgress(elementId) {
-      document.getElementById(elementId).classList.add('hidden');
-    }
-
-    // iOS-compatible download function
-    function downloadImageFile(url, filename) {
-      // Check if it's iOS
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    // Initialize logging
+    function initLogging() {
+      // Log visitor
+      const visitor = {
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        referrer: document.referrer,
+        sessionId: generateSessionId()
+      };
+      logs.visitors.push(visitor);
       
-      if (isIOS || isSafari) {
-        // For iOS/Safari, open image in new window with instructions
-        const newWindow = window.open('', '_blank');
-        if (newWindow) {
-          newWindow.document.write(`
-            <html>
-              <head>
-                <title>Download ${filename}</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <style>
-                  body { 
-                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; 
-                    margin: 0; 
-                    padding: 20px; 
-                    text-align: center; 
-                    background: #f5f5f5; 
-                  }
-                  .container { 
-                    max-width: 600px; 
-                    margin: 0 auto; 
-                    background: white; 
-                    padding: 20px; 
-                    border-radius: 10px; 
-                    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-                  }
-                  img { 
-                    max-width: 100%; 
-                    height: auto; 
-                    border-radius: 8px; 
-                    margin: 20px 0; 
-                  }
-                  .instructions { 
-                    background: #e3f2fd; 
-                    padding: 15px; 
-                    border-radius: 8px; 
-                    margin: 20px 0; 
-                    font-size: 14px; 
-                    line-height: 1.5; 
-                  }
-                  .step { 
-                    margin: 10px 0; 
-                    text-align: left; 
-                  }
-                  h1 { 
-                    color: #333; 
-                    margin-bottom: 10px; 
-                  }
-                  .download-btn {
-                    background: #007AFF;
-                    color: white;
-                    padding: 12px 24px;
-                    border: none;
-                    border-radius: 8px;
-                    font-size: 16px;
-                    cursor: pointer;
-                    margin: 10px;
-                    text-decoration: none;
-                    display: inline-block;
-                  }
-                </style>
-              </head>
-              <body>
-                <div class="container">
-                  <h1>Your Image is Ready!</h1>
-                  <img src="${url}" alt="Processed Image">
-                  <div class="instructions">
-                    <strong>📱 To save on iOS/iPhone/iPad:</strong>
-                    <div class="step">1. Tap and hold the image above</div>
-                    <div class="step">2. Select "Save to Photos" or "Add to Photos"</div>
-                    <div class="step">3. The image will be saved to your Photos app</div>
-                  </div>
-                  <a href="${url}" download="${filename}" class="download-btn">Try Direct Download</a>
-                  <button onclick="window.close()" class="download-btn" style="background: #666;">Close</button>
-                </div>
-              </body>
-            </html>
-          `);
-        } else {
-          // Fallback: try to show image in same window
-          alert('Please allow popups to download the image, or right-click the image and select "Save Image As"');
-        }
-      } else {
-        // Standard download for other browsers
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+      // Log daily activity
+      const today = new Date().toDateString();
+      let dailyLog = logs.daily.find(d => d.date === today);
+      if (!dailyLog) {
+        dailyLog = { date: today, visits: 0, resizes: 0, compressions: 0, enhancements: 0 };
+        logs.daily.push(dailyLog);
+      }
+      dailyLog.visits++;
+      
+      saveLogs();
+    }
+
+    function generateSessionId() {
+      return Math.random().toString(36).substr(2, 9);
+    }
+
+    function saveLogs() {
+      localStorage.setItem('pixmorph_logs', JSON.stringify(logs));
+    }
+
+    function loadLogs() {
+      const savedLogs = localStorage.getItem('pixmorph_logs');
+      if (savedLogs) {
+        logs = JSON.parse(savedLogs);
       }
     }
 
-    // Tab functionality
-    document.querySelectorAll('.tab-trigger').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const tabName = trigger.dataset.tab;
-        
-        // Update trigger states
-        document.querySelectorAll('.tab-trigger').forEach(t => t.classList.remove('active'));
-        trigger.classList.add('active');
-        
-        // Update content states
-        document.querySelectorAll('.tab-content').forEach(content => {
-          content.classList.remove('active');
-        });
-        document.getElementById(tabName + '-tab').classList.add('active');
+    // Navigation functions
+    function showHome() {
+      document.getElementById('home-page').classList.remove('hidden');
+      document.getElementById('editor-page').classList.add('hidden');
+      document.getElementById('result').classList.add('hidden');
+    }
+
+    function showResizer() {
+      document.getElementById('home-page').classList.add('hidden');
+      document.getElementById('editor-page').classList.remove('hidden');
+      switchTab('resize');
+    }
+
+    function showCompressor() {
+      document.getElementById('home-page').classList.add('hidden');
+      document.getElementById('editor-page').classList.remove('hidden');
+      switchTab('compress');
+    }
+
+    function showEnhancer() {
+      document.getElementById('home-page').classList.add('hidden');
+      document.getElementById('editor-page').classList.remove('hidden');
+      switchTab('enhance');
+    }
+
+    function switchTab(tabName) {
+      // Update tab triggers
+      document.querySelectorAll('.tab-trigger').forEach(trigger => {
+        trigger.classList.remove('active');
+        if (trigger.dataset.tab === tabName) {
+          trigger.classList.add('active');
+        }
       });
-    });
+
+      // Update tab contents
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      document.getElementById(tabName + '-content').classList.add('active');
+    }
+
+    // File handling
+    function handleFile(file) {
+      if (!file) return;
+
+      // Validate file
+      if (!file.type.startsWith('image/')) {
+        showError('Please select a valid image file.');
+        return;
+      }
+
+      if (file.size > 10 * 1024 * 1024) {
+        showError('File size must be less than 10MB.');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        currentImage = e.target.result;
+        
+        // Show preview
+        const previewImg = document.getElementById('previewImage');
+        const emptyState = document.getElementById('previewEmpty');
+        
+        previewImg.src = currentImage;
+        previewImg.classList.remove('hidden');
+        emptyState.classList.add('hidden');
+
+        // Enable process buttons
+        document.getElementById('resizeBtn').disabled = false;
+        document.getElementById('compressBtn').disabled = false;
+        document.getElementById('enhanceBtn').disabled = false;
+      };
+      reader.readAsDataURL(file);
+    }
 
     // Drag and drop functionality
-    function setupDragAndDrop(elementId, fileInputId, callback) {
-      const element = document.getElementById(elementId);
-      const fileInput = document.getElementById(fileInputId);
-
-      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        element.addEventListener(eventName, preventDefaults, false);
-      });
-
-      function preventDefaults(e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-
-      ['dragenter', 'dragover'].forEach(eventName => {
-        element.addEventListener(eventName, () => element.classList.add('dragover'), false);
-      });
-
-      ['dragleave', 'drop'].forEach(eventName => {
-        element.addEventListener(eventName, () => element.classList.remove('dragover'), false);
-      });
-
-      element.addEventListener('drop', (e) => {
-        const files = e.dataTransfer.files;
-        if (files.length > 0) {
-          callback(files[0]);
-        }
-      });
-
-      fileInput.addEventListener('change', (e) => {
-        if (e.target.files.length > 0) {
-          callback(e.target.files[0]);
-        }
-      });
-    }
-
-    // RESIZE TOOL
-    let resizeFile = null;
-    let resizeOriginalInfo = null;
-    let resizeNewInfo = null;
-
-    function handleResizeFile(file) {
-      const validation = validateImageFile(file);
-      if (!validation.isValid) {
-        showError('resize-error', validation.error);
-        return;
-      }
-
-      hideError('resize-error');
-      resizeFile = file;
-
-      const img = new Image();
-      img.onload = () => {
-        resizeOriginalInfo = {
-          width: img.width,
-          height: img.height,
-          size: file.size
-        };
-      };
-      img.src = URL.createObjectURL(file);
-    }
-
-    function processResize() {
-      if (!resizeFile) {
-        showError('resize-error', 'Please upload an image first');
-        return;
-      }
-
-      const width = parseInt(document.getElementById('width-input').value);
-      const height = parseInt(document.getElementById('height-input').value);
-
-      if (!width || !height || width <= 0 || height <= 0) {
-        showError('resize-error', 'Please enter valid width and height values');
-        return;
-      }
-
-      hideError('resize-error');
-      showProgress('resize-progress', 20);
-
-      const img = new Image();
-      img.onload = () => {
-        showProgress('resize-progress', 60);
-
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = width;
-        canvas.height = height;
-        ctx.drawImage(img, 0, 0, width, height);
-
-        showProgress('resize-progress', 90);
-
-        canvas.toBlob((blob) => {
-          const url = URL.createObjectURL(blob);
-          document.getElementById('resize-result').src = url;
-          document.getElementById('resize-result').dataset.url = url;
-          
-          resizeNewInfo = { width, height, size: blob.size };
-          
-          // Update info display
-          document.getElementById('resize-original-info').textContent = 
-            `${resizeOriginalInfo.width} × ${resizeOriginalInfo.height}px (${formatFileSize(resizeOriginalInfo.size)})`;
-          document.getElementById('resize-new-info').textContent = 
-            `${width} × ${height}px (${formatFileSize(blob.size)})`;
-          
-          // Show preview
-          document.getElementById('resize-empty').classList.add('hidden');
-          document.getElementById('resize-preview').classList.remove('hidden');
-          
-          showProgress('resize-progress', 100);
-          setTimeout(() => hideProgress('resize-progress'), 1000);
-        }, 'image/png');
-      };
-      img.src = URL.createObjectURL(resizeFile);
-    }
-
-    function resetResize() {
-      resizeFile = null;
-      resizeOriginalInfo = null;
-      resizeNewInfo = null;
-      document.getElementById('resize-file').value = '';
-      document.getElementById('width-input').value = '';
-      document.getElementById('height-input').value = '';
-      document.getElementById('platform-select').value = 'custom';
-      document.getElementById('resize-preview').classList.add('hidden');
-      document.getElementById('resize-empty').classList.remove('hidden');
-      hideError('resize-error');
-      hideProgress('resize-progress');
-    }
-
-    function downloadResize() {
-      const img = document.getElementById('resize-result');
-      const url = img.dataset.url;
-      if (url) {
-        downloadImageFile(url, 'pixmorph_resized.png');
-      }
-    }
-
-    // Platform preset handling
-    document.getElementById('platform-select').addEventListener('change', (e) => {
-      const value = e.target.value;
-      if (value && value !== 'custom' && platformSizes[value]) {
-        const [w, h] = platformSizes[value];
-        document.getElementById('width-input').value = w;
-        document.getElementById('height-input').value = h;
-      } else if (value === 'custom') {
-        document.getElementById('width-input').value = '';
-        document.getElementById('height-input').value = '';
-      }
-    });
-
-    // Setup resize tool
-    setupDragAndDrop('resize-upload', 'resize-file', handleResizeFile);
-    document.getElementById('resize-btn').addEventListener('click', processResize);
-    document.getElementById('resize-reset').addEventListener('click', resetResize);
-    document.getElementById('resize-download').addEventListener('click', downloadResize);
-
-    // COMPRESS TOOL
-    let compressFile = null;
-    let compressOriginalSize = 0;
-    let compressedSize = 0;
-
-    function handleCompressFile(file) {
-      const validation = validateImageFile(file);
-      if (!validation.isValid) {
-        alert(validation.error);
-        return;
-      }
-
-      compressFile = file;
-      compressOriginalSize = file.size;
-    }
-
-    function processCompress() {
-      if (!compressFile) {
-        alert('Please upload an image first');
-        return;
-      }
-
-      const quality = document.getElementById('quality-slider').value / 100;
-      const format = document.querySelector('input[name="format"]:checked').value;
+    function setupDragDrop() {
+      const uploadZones = document.querySelectorAll('.upload-zone');
       
-      showProgress('compress-progress', 30);
+      uploadZones.forEach(zone => {
+        zone.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          zone.classList.add('dragover');
+        });
 
-      const img = new Image();
-      img.onload = () => {
-        showProgress('compress-progress', 70);
+        zone.addEventListener('dragleave', () => {
+          zone.classList.remove('dragover');
+        });
 
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = img.width;
-        canvas.height = img.height;
-        ctx.drawImage(img, 0, 0);
+        zone.addEventListener('drop', (e) => {
+          e.preventDefault();
+          zone.classList.remove('dragover');
+          const files = e.dataTransfer.files;
+          if (files.length > 0) {
+            handleFile(files[0]);
+          }
+        });
+      });
+    }
 
-        const mimeType = format === 'png' ? 'image/png' : 
-                        format === 'webp' ? 'image/webp' : 'image/jpeg';
+    // Preset dimensions
+    function updateDimensions() {
+      const preset = document.getElementById('resizePreset').value;
+      const widthInput = document.getElementById('width');
+      const heightInput = document.getElementById('height');
 
-        canvas.toBlob((blob) => {
-          const url = URL.createObjectURL(blob);
-          document.getElementById('compress-result').src = url;
-          document.getElementById('compress-result').dataset.url = url;
-          document.getElementById('compress-result').dataset.format = format;
-          
-          compressedSize = blob.size;
-          const savedPercentage = Math.round((1 - blob.size / compressOriginalSize) * 100);
-          
-          // Update info display
-          document.getElementById('compress-original-size').textContent = formatFileSize(compressOriginalSize);
-          document.getElementById('compress-new-size').textContent = formatFileSize(compressedSize);
-          document.getElementById('compress-savings').textContent = 
-            `${savedPercentage}% (${formatFileSize(compressOriginalSize - compressedSize)})`;
-          
-          // Show preview
-          document.getElementById('compress-empty').classList.add('hidden');
-          document.getElementById('compress-preview').classList.remove('hidden');
-          
-          showProgress('compress-progress', 100);
-          setTimeout(() => hideProgress('compress-progress'), 1000);
-        }, mimeType, quality);
+      const presets = {
+        instagram: { width: 1080, height: 1080 },
+        facebook: { width: 820, height: 312 },
+        youtube: { width: 1280, height: 720 },
+        linkedin: { width: 1584, height: 396 },
+        twitter: { width: 1500, height: 500 }
       };
-      img.src = URL.createObjectURL(compressFile);
-    }
 
-    function resetCompress() {
-      compressFile = null;
-      compressOriginalSize = 0;
-      compressedSize = 0;
-      document.getElementById('compress-file').value = '';
-      document.getElementById('quality-slider').value = 70;
-      document.getElementById('quality-value').textContent = '70%';
-      document.querySelector('input[name="format"][value="jpeg"]').checked = true;
-      document.getElementById('compress-preview').classList.add('hidden');
-      document.getElementById('compress-empty').classList.remove('hidden');
-      hideProgress('compress-progress');
-    }
-
-    function downloadCompress() {
-      const img = document.getElementById('compress-result');
-      const url = img.dataset.url;
-      const format = img.dataset.format;
-      if (url) {
-        downloadImageFile(url, `pixmorph_compressed.${format}`);
+      if (presets[preset]) {
+        widthInput.value = presets[preset].width;
+        heightInput.value = presets[preset].height;
       }
     }
 
-    // Quality slider handling
-    document.getElementById('quality-slider').addEventListener('input', (e) => {
-      document.getElementById('quality-value').textContent = e.target.value + '%';
-    });
-
-    // Setup compress tool
-    setupDragAndDrop('compress-upload', 'compress-file', handleCompressFile);
-    document.getElementById('compress-btn').addEventListener('click', processCompress);
-    document.getElementById('compress-reset').addEventListener('click', resetCompress);
-    document.getElementById('compress-download').addEventListener('click', downloadCompress);
-
-    // ENHANCE TOOL
-    let enhanceFile = null;
-    let enhanceOriginalCanvas = null;
-    let showingOriginal = true;
-
-    function handleEnhanceFile(file) {
-      const validation = validateImageFile(file);
-      if (!validation.isValid) {
-        alert(validation.error);
-        return;
-      }
-
-      enhanceFile = file;
-      originalImageUrl = URL.createObjectURL(file);
-
-      const img = new Image();
-      img.onload = () => {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = img.width;
-        canvas.height = img.height;
-        ctx.drawImage(img, 0, 0);
-        enhanceOriginalCanvas = canvas;
-        applyEnhancement();
-      };
-      img.src = originalImageUrl;
+    // Quality and intensity updates
+    function updateQuality(value) {
+      document.getElementById('qualityValue').textContent = value;
     }
 
-    function applyEnhancement() {
-      if (!enhanceOriginalCanvas) return;
+    function updateIntensity(value) {
+      document.getElementById('intensityValue').textContent = value;
+    }
 
-      const brightness = document.getElementById('brightness-slider').value;
-      const contrast = document.getElementById('contrast-slider').value;
-      const saturation = document.getElementById('saturation-slider').value;
-      const blur = document.getElementById('blur-slider').value;
+    // Image processing
+    function processImage(type) {
+      if (!currentImage) return;
 
+      showProgress();
+
+      // Simulate processing time
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += 10;
+        updateProgress(progress);
+
+        if (progress >= 100) {
+          clearInterval(interval);
+          completeProcessing(type);
+        }
+      }, 200);
+    }
+
+    function completeProcessing(type) {
+      hideProgress();
+      
+      // Create canvas for processing
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
-      canvas.width = enhanceOriginalCanvas.width;
-      canvas.height = enhanceOriginalCanvas.height;
+      const img = new Image();
 
-      ctx.filter = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturation}%) blur(${blur}px)`;
-      ctx.drawImage(enhanceOriginalCanvas, 0, 0);
+      img.onload = function() {
+        let newWidth = img.width;
+        let newHeight = img.height;
 
-      enhancedImageUrl = canvas.toDataURL();
-      
-      const resultImg = document.getElementById('enhance-result');
-      resultImg.src = showingOriginal ? originalImageUrl : enhancedImageUrl;
-      resultImg.dataset.originalUrl = originalImageUrl;
-      resultImg.dataset.enhancedUrl = enhancedImageUrl;
+        if (type === 'resize') {
+          newWidth = parseInt(document.getElementById('width').value) || img.width;
+          newHeight = parseInt(document.getElementById('height').value) || img.height;
+        }
 
-      // Show preview
-      document.getElementById('enhance-empty').classList.add('hidden');
-      document.getElementById('enhance-preview').classList.remove('hidden');
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+
+        // Apply filters for enhancement
+        if (type === 'enhance') {
+          const filter = document.getElementById('filter').value;
+          const intensity = document.getElementById('intensity').value;
+          
+          if (filter !== 'none') {
+            ctx.filter = getFilterString(filter, intensity);
+          }
+        }
+
+        ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+        // Get result
+        const quality = type === 'compress' ? 
+          parseInt(document.getElementById('quality').value) / 100 : 0.9;
+        
+        processedImage = canvas.toDataURL('image/jpeg', quality);
+        
+        // Show result
+        showResult();
+        
+        // Log activity
+        logActivity(type);
+      };
+
+      img.src = currentImage;
     }
 
-    function resetEnhance() {
-      enhanceFile = null;
-      enhanceOriginalCanvas = null;
-      showingOriginal = true;
-      document.getElementById('enhance-file').value = '';
-      
-      // Reset sliders
-      document.getElementById('brightness-slider').value = 100;
-      document.getElementById('contrast-slider').value = 100;
-      document.getElementById('saturation-slider').value = 100;
-      document.getElementById('blur-slider').value = 0;
-      
-      // Update value displays
-      document.getElementById('brightness-value').textContent = '100%';
-      document.getElementById('contrast-value').textContent = '100%';
-      document.getElementById('saturation-value').textContent = '100%';
-      document.getElementById('blur-value').textContent = '0px';
-      
-      // Reset toggle
-      document.getElementById('show-original').classList.add('active');
-      document.getElementById('show-enhanced').classList.remove('active');
-      
-      document.getElementById('enhance-preview').classList.add('hidden');
-      document.getElementById('enhance-empty').classList.remove('hidden');
-    }
-
-    function downloadEnhance() {
-      if (enhancedImageUrl) {
-        downloadImageFile(enhancedImageUrl, 'pixmorph_enhanced.png');
+    function getFilterString(filter, intensity) {
+      const value = intensity / 100;
+      switch (filter) {
+        case 'brightness': return `brightness(${value})`;
+        case 'contrast': return `contrast(${value})`;
+        case 'saturate': return `saturate(${value})`;
+        case 'sepia': return `sepia(${value})`;
+        case 'grayscale': return `grayscale(${value})`;
+        case 'blur': return `blur(${value * 5}px)`;
+        default: return 'none';
       }
     }
 
-    // Slider value updates
-    document.getElementById('brightness-slider').addEventListener('input', (e) => {
-      document.getElementById('brightness-value').textContent = e.target.value + '%';
-      applyEnhancement();
-    });
+    function logActivity(type) {
+      const today = new Date().toDateString();
+      let dailyLog = logs.daily.find(d => d.date === today);
+      if (!dailyLog) {
+        dailyLog = { date: today, visits: 0, resizes: 0, compressions: 0, enhancements: 0 };
+        logs.daily.push(dailyLog);
+      }
+      
+      if (type === 'resize') dailyLog.resizes++;
+      else if (type === 'compress') dailyLog.compressions++;
+      else if (type === 'enhance') dailyLog.enhancements++;
+      
+      saveLogs();
+    }
 
-    document.getElementById('contrast-slider').addEventListener('input', (e) => {
-      document.getElementById('contrast-value').textContent = e.target.value + '%';
-      applyEnhancement();
-    });
+    // Progress bar functions
+    function showProgress() {
+      document.getElementById('progress').classList.remove('hidden');
+      updateProgress(0);
+    }
 
-    document.getElementById('saturation-slider').addEventListener('input', (e) => {
-      document.getElementById('saturation-value').textContent = e.target.value + '%';
-      applyEnhancement();
-    });
+    function hideProgress() {
+      document.getElementById('progress').classList.add('hidden');
+    }
 
-    document.getElementById('blur-slider').addEventListener('input', (e) => {
-      document.getElementById('blur-value').textContent = e.target.value + 'px';
-      applyEnhancement();
-    });
+    function updateProgress(percent) {
+      document.getElementById('progressBar').style.width = percent + '%';
+    }
 
-    // Preset handling
-    document.querySelectorAll('[data-preset]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const presetName = btn.dataset.preset;
-        const preset = presets[presetName];
+    // Result display
+    function showResult() {
+      document.getElementById('resultImage').src = processedImage;
+      document.getElementById('result').classList.remove('hidden');
+    }
+
+    // Download functionality
+    function downloadImage() {
+      if (!processedImage) return;
+
+      // For iOS devices, open in new tab instead of direct download
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      
+      if (isIOS) {
+        const newTab = window.open();
+        newTab.document.write(`
+          <html>
+            <head><title>Download Image</title></head>
+            <body style="margin:0; background:#000; display:flex; justify-content:center; align-items:center; min-height:100vh;">
+              <div style="text-align:center; color:white; font-family:Arial;">
+                <img src="${processedImage}" style="max-width:100%; max-height:80vh; object-fit:contain;">
+                <p>Long press the image and select "Save to Photos"</p>
+              </div>
+            </body>
+          </html>
+        `);
+      } else {
+        // Regular download for other devices
+        const link = document.createElement('a');
+        link.download = 'pixmorph-processed-image.jpg';
+        link.href = processedImage;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }
+
+    // Feedback system
+    function showFeedback() {
+      document.getElementById('feedbackModal').classList.remove('hidden');
+    }
+
+    function hideFeedback() {
+      document.getElementById('feedbackModal').classList.add('hidden');
+    }
+
+    function submitFeedback(event) {
+      event.preventDefault();
+      
+      const feedback = {
+        timestamp: new Date().toISOString(),
+        rating: document.getElementById('rating').value,
+        comments: document.getElementById('comments').value,
+        sessionId: generateSessionId()
+      };
+      
+      logs.feedback.push(feedback);
+      saveLogs();
+      
+      hideFeedback();
+      alert('Thank you for your feedback!');
+      
+      // Reset form
+      document.getElementById('rating').value = '';
+      document.getElementById('comments').value = '';
+    }
+
+    // Sync logs with GitHub
+    async function syncLogsWithGitHub() {
+      try {
+        const response = await fetch(LOG_FILE_URL);
+        if (response.ok) {
+          const csvText = await response.text();
+          const remoteData = parseCSVLogs(csvText);
+          
+          // Merge remote logs with local logs
+          mergeLogs(remoteData);
+        }
+      } catch (error) {
+        console.log('Could not sync with remote logs, using local storage only');
+      }
+    }
+
+    function parseCSVLogs(csvText) {
+      const lines = csvText.split('\n');
+      const remoteData = { visitors: [], feedback: [], daily: [] };
+      let currentSection = '';
+      
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
         
-        document.getElementById('brightness-slider').value = preset.brightness;
-        document.getElementById('contrast-slider').value = preset.contrast;
-        document.getElementById('saturation-slider').value = preset.saturation;
-        document.getElementById('blur-slider').value = preset.blur;
+        if (line === 'VISITORS SHEET') {
+          currentSection = 'visitors';
+          i++; // Skip header line
+          continue;
+        } else if (line === 'FEEDBACK SHEET') {
+          currentSection = 'feedback';
+          i++; // Skip header line
+          continue;
+        } else if (line === 'DAILY ACTIVITY SHEET') {
+          currentSection = 'daily';
+          i++; // Skip header line
+          continue;
+        }
         
-        document.getElementById('brightness-value').textContent = preset.brightness + '%';
-        document.getElementById('contrast-value').textContent = preset.contrast + '%';
-        document.getElementById('saturation-value').textContent = preset.saturation + '%';
-        document.getElementById('blur-value').textContent = preset.blur + 'px';
-        
-        applyEnhancement();
+        if (line && currentSection) {
+          const values = line.split(',').map(v => v.replace(/"/g, ''));
+          
+          if (currentSection === 'visitors' && values.length >= 4) {
+            remoteData.visitors.push({
+              timestamp: values[0],
+              userAgent: values[1],
+              referrer: values[2],
+              sessionId: values[3]
+            });
+          } else if (currentSection === 'feedback' && values.length >= 4) {
+            remoteData.feedback.push({
+              timestamp: values[0],
+              rating: values[1],
+              comments: values[2],
+              sessionId: values[3]
+            });
+          } else if (currentSection === 'daily' && values.length >= 5) {
+            remoteData.daily.push({
+              date: values[0],
+              visits: parseInt(values[1]) || 0,
+              resizes: parseInt(values[2]) || 0,
+              compressions: parseInt(values[3]) || 0,
+              enhancements: parseInt(values[4]) || 0
+            });
+          }
+        }
+      }
+      
+      return remoteData;
+    }
+
+    function mergeLogs(remoteData) {
+      // Merge visitors (avoid duplicates by sessionId)
+      remoteData.visitors.forEach(remote => {
+        if (!logs.visitors.find(local => local.sessionId === remote.sessionId)) {
+          logs.visitors.push(remote);
+        }
+      });
+      
+      // Merge feedback (avoid duplicates by sessionId + timestamp)
+      remoteData.feedback.forEach(remote => {
+        if (!logs.feedback.find(local => 
+          local.sessionId === remote.sessionId && local.timestamp === remote.timestamp)) {
+          logs.feedback.push(remote);
+        }
+      });
+      
+      // Merge daily data (update existing dates or add new ones)
+      remoteData.daily.forEach(remote => {
+        const existing = logs.daily.find(local => local.date === remote.date);
+        if (existing) {
+          // Update with higher values (in case of multiple sources)
+          existing.visits = Math.max(existing.visits, remote.visits);
+          existing.resizes = Math.max(existing.resizes, remote.resizes);
+          existing.compressions = Math.max(existing.compressions, remote.compressions);
+          existing.enhancements = Math.max(existing.enhancements, remote.enhancements);
+        } else {
+          logs.daily.push(remote);
+        }
+      });
+      
+      saveLogs();
+    }
+
+    // Logs download with GitHub sync
+    function downloadLogs() {
+      // Create Excel-like format (CSV)
+      let csvContent = "data:text/csv;charset=utf-8,";
+      
+      // Visitors sheet
+      csvContent += "VISITORS SHEET\n";
+      csvContent += "Timestamp,User Agent,Referrer,Session ID\n";
+      logs.visitors.forEach(visitor => {
+        csvContent += `"${visitor.timestamp}","${visitor.userAgent}","${visitor.referrer}","${visitor.sessionId}"\n`;
+      });
+      
+      csvContent += "\n\nFEEDBACK SHEET\n";
+      csvContent += "Timestamp,Rating,Comments,Session ID\n";
+      logs.feedback.forEach(feedback => {
+        csvContent += `"${feedback.timestamp}","${feedback.rating}","${feedback.comments}","${feedback.sessionId}"\n`;
+      });
+      
+      csvContent += "\n\nDAILY ACTIVITY SHEET\n";
+      csvContent += "Date,Visits,Resizes,Compressions,Enhancements\n";
+      logs.daily.forEach(daily => {
+        csvContent += `"${daily.date}","${daily.visits}","${daily.resizes}","${daily.compressions}","${daily.enhancements}"\n`;
+      });
+
+      // Download
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement('a');
+      link.setAttribute('href', encodedUri);
+      link.setAttribute('download', `pixmorph-logs-${new Date().toISOString().split('T')[0]}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Show instructions for GitHub upload
+      showGitHubUploadInstructions();
+    }
+
+    function showGitHubUploadInstructions() {
+      const instructions = `
+GitHub Upload Instructions:
+1. Upload the downloaded CSV file to your GitHub repository
+2. Place it in the /logs/ directory
+3. Update the LOG_FILE_URL variable in the code with the new GitHub raw URL
+4. The application will automatically sync logs from GitHub on next visit
+
+Example URL format:
+https://raw.githubusercontent.com/username/repository/main/logs/pixmorph-logs-YYYY-MM-DD.csv
+      `;
+      
+      const modal = document.createElement('div');
+      modal.className = 'modal';
+      modal.innerHTML = `
+        <div class="modal-content">
+          <h3>GitHub Upload Instructions</h3>
+          <pre style="white-space: pre-wrap; font-size: 0.875rem; background: var(--background); padding: 1rem; border-radius: var(--radius); margin: 1rem 0;">${instructions}</pre>
+          <div class="modal-actions">
+            <button class="btn btn-primary" onclick="this.closest('.modal').remove()">Got it!</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+
+    // Error handling
+    function showError(message) {
+      const errorDiv = document.createElement('div');
+      errorDiv.className = 'error';
+      errorDiv.innerHTML = `
+        <div class="error-content">
+          <i class="fas fa-exclamation-triangle"></i>
+          ${message}
+        </div>
+      `;
+      
+      document.querySelector('.container').appendChild(errorDiv);
+      
+      setTimeout(() => {
+        errorDiv.remove();
+      }, 5000);
+    }
+
+    // Tab click handlers
+    document.querySelectorAll('.tab-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        switchTab(trigger.dataset.tab);
       });
     });
 
-    // Original/Enhanced toggle
-    document.getElementById('show-original').addEventListener('click', () => {
-      showingOriginal = true;
-      document.getElementById('show-original').classList.add('active');
-      document.getElementById('show-enhanced').classList.remove('active');
-      const img = document.getElementById('enhance-result');
-      if (img.dataset.originalUrl) {
-        img.src = img.dataset.originalUrl;
-      }
+    // Initialize app
+    document.addEventListener('DOMContentLoaded', async function() {
+      loadLogs();
+      await syncLogsWithGitHub();
+      initLogging();
+      setupDragDrop();
     });
-
-    document.getElementById('show-enhanced').addEventListener('click', () => {
-      showingOriginal = false;
-      document.getElementById('show-enhanced').classList.add('active');
-      document.getElementById('show-original').classList.remove('active');
-      const img = document.getElementById('enhance-result');
-      if (img.dataset.enhancedUrl) {
-        img.src = img.dataset.enhancedUrl;
-      }
-    });
-
-    // Setup enhance tool
-    setupDragAndDrop('enhance-upload', 'enhance-file', handleEnhanceFile);
-    document.getElementById('enhance-btn').addEventListener('click', applyEnhancement);
-    document.getElementById('enhance-reset').addEventListener('click', resetEnhance);
-    document.getElementById('enhance-download').addEventListener('click', downloadEnhance);
   </script>
 </body>
 </html>
