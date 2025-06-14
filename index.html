@@ -1,15 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <script data-goatcounter="https://7296.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-</head>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PixMorph - Professional Image Editor | Resize, Compress & Enhance Images Online</title>
   <meta name="description" content="Professional online image editor to resize, compress and enhance photos. Free image resizer for social media, web optimization. Works on all devices - no software needed." />
-  <meta name="keywords" content="image resizer online, compress image without losing quality, reduce image size online, image compressor online free, online photo resizer, best image compressor, resize image for Instagram, convert image to specific dimensions, online tool to resize image, compress JPEG image online, image size reducer online, resize image for LinkedIn profile, compress image for website, reduce PNG file size online, photo compressor tool, online image editor, resize image for social media, compress photos online, reduce file size, image optimization tool, free image resizer, photo editor online, batch image resizer, smart image compression, lossless image compression, image format converter, web image optimizer, social media image sizes, profile picture resizer, banner image creator, thumbnail generator, image quality enhancer, photo filter tool, brightness contrast editor, saturation adjustment tool, professional photo editing, online image studio, quick image editor, mobile image editor, desktop image tool, cross-platform image editor" />
+  <meta name="keywords" content="resize image to 20KB, resize image to 100kb, resize image to 50kb, reduce image size in KB, image resizer for Windows, image resizer free, resize image to 200kb, image resize in KB, image resizer online, compress image without losing quality, reduce image size online, image compressor online free, online photo resizer, best image compressor, resize image for Instagram, convert image to specific dimensions, online tool to resize image, compress JPEG image online, image size reducer online, resize image for LinkedIn profile, compress image for website, reduce PNG file size online, photo compressor tool, online image editor, resize image for social media, compress photos online, reduce file size, image optimization tool, free image resizer, photo editor online, batch image resizer, smart image compression, lossless image compression, image format converter, web image optimizer, social media image sizes, profile picture resizer, banner image creator, thumbnail generator, image quality enhancer, photo filter tool, brightness contrast editor, saturation adjustment tool, professional photo editing, online image studio, quick image editor, mobile image editor, desktop image tool, cross-platform image editor" />
   <meta name="author" content="Rajat Gupta" />
   <meta name="robots" content="index, follow" />
   
@@ -33,12 +30,13 @@
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" />
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" />
   
-  <!-- Structured Data -->
+  <!-- Structured Data with Enhanced SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "PixMorph - Professional Image Editor",
+    "alternateName": "Image Resizer Online",
     "description": "Professional online image editor to resize, compress and enhance photos. Free image resizer for social media, web optimization.",
     "url": "https://pixmorph.netlify.app/",
     "applicationCategory": "MultimediaApplication",
@@ -54,12 +52,31 @@
     },
     "image": "https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG",
     "featureList": [
-      "Resize images for social media",
+      "Resize images to 20KB, 50KB, 100KB, 200KB",
+      "Free image resizer for Windows and all devices",
       "Compress images for web optimization", 
-      "Enhance photos with filters",
+      "Enhance photos with professional filters",
+      "Image size reducer in KB",
       "No software installation required",
       "Works on all devices",
       "100% browser-based processing"
+    ],
+    "mainEntity": [
+      {
+        "@type": "Thing",
+        "name": "Image Resizer",
+        "description": "Resize images to specific KB sizes including 20KB, 50KB, 100KB, 200KB"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Image Compressor",
+        "description": "Reduce image file size without losing quality"
+      },
+      {
+        "@type": "Thing",
+        "name": "Image Enhancer", 
+        "description": "Apply professional filters and effects to enhance photos"
+      }
     ]
   }
   </script>
@@ -402,6 +419,35 @@
       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
 
+    .size-presets {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .size-preset {
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      text-align: center;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+    }
+
+    .size-preset:hover {
+      border-color: var(--primary);
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    .size-preset.active {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: white;
+    }
+
     /* Upload Zone */
     .upload-zone {
       border: 2px dashed var(--border);
@@ -687,7 +733,7 @@
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="#" class="logo" onclick="showHome()">
+        <a href="#" class="logo" onclick="navigateToHome()">
           <div class="logo-icon">
             <img src="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" 
                  alt="PixMorph Logo" 
@@ -719,33 +765,33 @@
       <!-- Home Page -->
       <div id="home-page">
         <div class="hero">
-          <h1>Professional Image Editor</h1>
-          <p>Resize, compress, and enhance your images with our powerful online tools. Choose from our professional features below to get started.</p>
+          <h1>Professional Image Editor & Resizer</h1>
+          <p>Resize images to 20KB, 50KB, 100KB, or 200KB. Free image resizer for Windows and all devices. Compress and enhance your photos with our professional online tools.</p>
         </div>
 
         <div class="feature-grid">
-          <div class="feature-card" onclick="showResizer()">
+          <div class="feature-card" onclick="navigateToTool('resize')">
             <div class="feature-icon">
               <i class="fas fa-expand-arrows-alt"></i>
             </div>
             <h3>Image Resizer</h3>
-            <p>Resize images for social media, websites, and more. Maintain quality while adjusting dimensions.</p>
+            <p>Resize images to specific KB sizes (20KB, 50KB, 100KB, 200KB). Perfect for social media, websites, and reducing file size in KB.</p>
           </div>
 
-          <div class="feature-card" onclick="showCompressor()">
+          <div class="feature-card" onclick="navigateToTool('compress')">
             <div class="feature-icon">
               <i class="fas fa-compress-alt"></i>
             </div>
             <h3>Image Compressor</h3>
-            <p>Reduce file size without losing quality. Perfect for web optimization and faster loading.</p>
+            <p>Reduce image file size without losing quality. Free image compressor for web optimization and faster loading times.</p>
           </div>
 
-          <div class="feature-card" onclick="showEnhancer()">
+          <div class="feature-card" onclick="navigateToTool('enhance')">
             <div class="feature-icon">
               <i class="fas fa-magic"></i>
             </div>
             <h3>Image Enhancer</h3>
-            <p>Apply filters and effects to improve your photos. Professional results in seconds.</p>
+            <p>Apply professional filters and effects to improve your photos. Brightness, contrast, saturation adjustments and more.</p>
           </div>
         </div>
       </div>
@@ -778,9 +824,20 @@
                 <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="handleFile(this.files[0])">
                 
                 <div class="form-group">
+                  <label class="label">Quick Size Presets (KB)</label>
+                  <div class="size-presets">
+                    <div class="size-preset" onclick="setTargetSize(20)">20KB</div>
+                    <div class="size-preset" onclick="setTargetSize(50)">50KB</div>
+                    <div class="size-preset" onclick="setTargetSize(100)">100KB</div>
+                    <div class="size-preset" onclick="setTargetSize(200)">200KB</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
                   <label class="label">Resize Options</label>
                   <select class="select" id="resizePreset" onchange="updateDimensions()">
                     <option value="custom">Custom Size</option>
+                    <option value="targetSize">Target File Size (KB)</option>
                     <option value="instagram">Instagram Post (1080x1080)</option>
                     <option value="facebook">Facebook Cover (820x312)</option>
                     <option value="youtube">YouTube Thumbnail (1280x720)</option>
@@ -798,6 +855,11 @@
                     <label class="label">Height (px)</label>
                     <input type="number" class="input" id="height" placeholder="Height">
                   </div>
+                </div>
+
+                <div class="form-group" id="targetSizeGroup" style="display: none;">
+                  <label class="label">Target Size (KB)</label>
+                  <input type="number" class="input" id="targetSize" placeholder="Enter target size in KB">
                 </div>
 
                 <button class="btn btn-primary" onclick="processImage('resize')" id="resizeBtn" disabled>
@@ -914,7 +976,7 @@
           </button>
         </div>
 
-        <button class="btn btn-secondary" onclick="showHome()" style="margin-top: 2rem;">
+        <button class="btn btn-secondary" onclick="navigateToHome()" style="margin-top: 2rem;">
           <i class="fas fa-arrow-left"></i> Back to Home
         </button>
       </div>
@@ -957,7 +1019,8 @@
       
       <h4>Features:</h4>
       <ul>
-        <li>Resize images for social media platforms</li>
+        <li>Resize images to specific KB sizes (20KB, 50KB, 100KB, 200KB)</li>
+        <li>Free image resizer for Windows and all devices</li>
         <li>Compress images without losing quality</li>
         <li>Enhance photos with filters and adjustments</li>
         <li>100% browser-based processing</li>
@@ -976,6 +1039,9 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-links">
+        <a href="#resize" onclick="navigateToTool('resize')">Image Resizer</a>
+        <a href="#compress" onclick="navigateToTool('compress')">Image Compressor</a>
+        <a href="#enhance" onclick="navigateToTool('enhance')">Image Enhancer</a>
         <a href="#" onclick="showFeedback()">Feedback</a>
         <a href="mailto:support@pixmorph.com">Contact</a>
       </div>
@@ -990,246 +1056,82 @@
     let logs = {
       visitors: [],
       feedback: [],
-      daily: []
+      daily: [],
+      activities: []
     };
     
-    // GitHub logs configuration - logs will be automatically synced
-    const LOG_FILE_URL = 'https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph-logs.csv';
+    // Enhanced URL routing for SEO
+    function navigateToHome() {
+      showHome();
+      updateURL('/');
+      updatePageTitle('PixMorph - Professional Image Editor | Resize Images Online');
+    }
 
-    // Initialize logging
-    function initLogging() {
-      // Log visitor
-      const visitor = {
-        timestamp: new Date().toISOString(),
-        userAgent: navigator.userAgent,
-        referrer: document.referrer,
-        sessionId: generateSessionId()
+    function navigateToTool(tool) {
+      showEditor(tool);
+      updateURL('/' + tool);
+      
+      const titles = {
+        'resize': 'Image Resizer - Resize to 20KB, 50KB, 100KB, 200KB | PixMorph',
+        'compress': 'Image Compressor - Reduce File Size Without Quality Loss | PixMorph', 
+        'enhance': 'Image Enhancer - Professional Photo Filters & Effects | PixMorph'
       };
-      logs.visitors.push(visitor);
       
-      // Log daily activity
-      const today = new Date().toDateString();
-      let dailyLog = logs.daily.find(d => d.date === today);
-      if (!dailyLog) {
-        dailyLog = { date: today, visits: 0, resizes: 0, compressions: 0, enhancements: 0 };
-        logs.daily.push(dailyLog);
-      }
-      dailyLog.visits++;
-      
-      saveLogsLocally();
-      syncWithGitHub();
+      updatePageTitle(titles[tool] || 'PixMorph - Professional Image Editor');
     }
 
-    function generateSessionId() {
-      return Math.random().toString(36).substr(2, 9);
-    }
-
-    function loadLogs() {
-      const savedLogs = localStorage.getItem('pixmorph_logs');
-      if (savedLogs) {
-        logs = JSON.parse(savedLogs);
+    function updateURL(path) {
+      if (history.pushState) {
+        history.pushState({}, '', path);
       }
     }
 
-    // Enhanced GitHub logging with automatic sync
-    async function syncWithGitHub() {
-      try {
-        // Fetch existing logs from GitHub
-        await fetchGitHubLogs();
-        console.log('Successfully connected to GitHub logs');
-        
-        // Automatically append new logs to GitHub
-        await appendLogsToGitHub();
-      } catch (error) {
-        console.log('GitHub sync not available, using local storage');
-        saveLogsLocally();
-      }
+    function updatePageTitle(title) {
+      document.title = title;
     }
 
-    async function appendLogsToGitHub() {
-      const localLogs = localStorage.getItem('pixmorph_logs');
-      if (localLogs) {
-        const parsedLogs = JSON.parse(localLogs);
-        
-        // Convert new logs to CSV format
-        const newLogEntries = convertNewLogsToCSV(parsedLogs);
-        
-        if (newLogEntries.length > 0) {
-          console.log(`Syncing ${newLogEntries.length} new log entries to GitHub`);
-          
-          // In a real implementation, this would make API calls to update the GitHub file
-          // For demonstration, we'll simulate the process
-          await simulateGitHubAppend(newLogEntries);
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', function(event) {
+      const path = window.location.pathname;
+      if (path === '/' || path === '') {
+        navigateToHome();
+      } else {
+        const tool = path.substring(1);
+        if (['resize', 'compress', 'enhance'].includes(tool)) {
+          navigateToTool(tool);
         }
       }
-    }
+    });
 
-    function convertNewLogsToCSV(logData) {
-      const newEntries = [];
-      
-      // Convert visitor logs
-      if (logData.visitors) {
-        logData.visitors.forEach(visitor => {
-          if (!visitor.synced) {
-            newEntries.push(`"${visitor.timestamp}","Page Visit","${visitor.userAgent.substring(0, 50)}","${window.location.href}","visitor"`);
-            visitor.synced = true;
-          }
-        });
-      }
-      
-      // Convert activity logs
-      if (logData.activities) {
-        logData.activities.forEach(activity => {
-          if (!activity.synced) {
-            newEntries.push(`"${activity.timestamp}","${activity.activity}","${activity.userAgent.substring(0, 50)}","${activity.url}","activity"`);
-            activity.synced = true;
-          }
-        });
-      }
-      
-      // Convert feedback logs
-      if (logData.feedback) {
-        logData.feedback.forEach(feedback => {
-          if (!feedback.synced) {
-            newEntries.push(`"${feedback.timestamp}","Feedback: ${feedback.rating} stars - ${feedback.comments.substring(0, 30)}","${feedback.userAgent.substring(0, 50)}","${window.location.href}","feedback"`);
-            feedback.synced = true;
-          }
-        });
-      }
-      
-      return newEntries;
-    }
-
-    async function simulateGitHubAppend(logEntries) {
-      try {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // In production, this would be actual GitHub API calls:
-        // 1. Get current file content from GitHub
-        // 2. Append new entries
-        // 3. Update file via GitHub API with commit
-        
-        console.log('Simulated GitHub sync completed');
-        console.log('New entries synced:', logEntries.length);
-        
-        // Save updated logs with sync status
-        saveLogsLocally();
-        
-        return true;
-      } catch (error) {
-        console.warn('GitHub sync failed:', error);
-        return false;
-      }
-    }
-
-    function saveLogsLocally() {
-      try {
-        localStorage.setItem('pixmorph_logs', JSON.stringify(logs));
-        console.log('Logs saved locally with sync status');
-      } catch (error) {
-        console.warn('Failed to save logs locally:', error);
-      }
-    }
-
-    async function fetchGitHubLogs() {
-      try {
-        const response = await fetch(LOG_FILE_URL);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const csvData = await response.text();
-        console.log('GitHub logs fetched successfully');
-        
-        // Parse existing logs to understand current state
-        parseGitHubLogs(csvData);
-        return csvData;
-      } catch (error) {
-        console.warn('Failed to fetch GitHub logs:', error);
-        return null;
-      }
-    }
-
-    function parseGitHubLogs(csvData) {
-      const lines = csvData.split('\n');
-      let existingActivities = 0;
-      
-      for (let i = 1; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (line) {
-          existingActivities++;
+    // Initialize routing on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const path = window.location.pathname;
+      if (path !== '/' && path !== '') {
+        const tool = path.substring(1);
+        if (['resize', 'compress', 'enhance'].includes(tool)) {
+          navigateToTool(tool);
+          return;
         }
       }
+      navigateToHome();
       
-      console.log(`Found ${existingActivities} existing log entries in GitHub`);
-      
-      // Mark existing timestamps as already synced to avoid duplicates
-      markExistingLogsAsSynced(csvData);
-    }
+      // Initialize other functionality
+      setupDragAndDrop();
+      loadLogs();
+      initLogging();
+    });
 
-    function markExistingLogsAsSynced(csvData) {
-      const lines = csvData.split('\n');
-      const existingTimestamps = new Set();
-      
-      for (let i = 1; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (line) {
-          const columns = line.split(',');
-          if (columns[0]) {
-            existingTimestamps.add(columns[0].replace(/"/g, ''));
-          }
-        }
-      }
-      
-      // Mark local logs as synced if they exist in GitHub
-      if (logs.activities) {
-        logs.activities.forEach(activity => {
-          if (existingTimestamps.has(activity.timestamp)) {
-            activity.synced = true;
-          }
-        });
-      }
-      
-      if (logs.visitors) {
-        logs.visitors.forEach(visitor => {
-          if (existingTimestamps.has(visitor.timestamp)) {
-            visitor.synced = true;
-          }
-        });
-      }
-      
-      if (logs.feedback) {
-        logs.feedback.forEach(feedback => {
-          if (existingTimestamps.has(feedback.timestamp)) {
-            feedback.synced = true;
-          }
-        });
-      }
-    }
-
-    // Navigation functions
+    // Navigation functions with URL updates
     function showHome() {
       document.getElementById('home-page').classList.remove('hidden');
       document.getElementById('editor-page').classList.add('hidden');
       document.getElementById('result').classList.add('hidden');
     }
 
-    function showResizer() {
+    function showEditor(tool) {
       document.getElementById('home-page').classList.add('hidden');
       document.getElementById('editor-page').classList.remove('hidden');
-      switchTab('resize');
-    }
-
-    function showCompressor() {
-      document.getElementById('home-page').classList.add('hidden');
-      document.getElementById('editor-page').classList.remove('hidden');
-      switchTab('compress');
-    }
-
-    function showEnhancer() {
-      document.getElementById('home-page').classList.add('hidden');
-      document.getElementById('editor-page').classList.remove('hidden');
-      switchTab('enhance');
+      switchTab(tool);
     }
 
     function switchTab(tabName) {
@@ -1250,16 +1152,9 @@
       document.querySelectorAll('.tab-trigger').forEach(trigger => {
         trigger.addEventListener('click', () => {
           const tabName = trigger.getAttribute('data-tab');
-          switchTab(tabName);
+          navigateToTool(tabName);
         });
       });
-
-      // Initialize drag and drop
-      setupDragAndDrop();
-      
-      // Load logs and initialize
-      loadLogs();
-      initLogging();
     });
 
     function setupDragAndDrop() {
@@ -1306,7 +1201,7 @@
           displayPreview();
           enableButtons();
           updateImageInfo();
-          logActivity(`Image uploaded: ${file.name}`);
+          logActivity(`Image uploaded: ${file.name} (${formatFileSize(file.size)})`);
         };
         currentImage.src = e.target.result;
       };
@@ -1326,7 +1221,7 @@
 
     function enableButtons() {
       document.getElementById('resizeBtn').disabled = false;
-      document.getElementById('compressBtn').disabled = false;
+      document.getElementById('compressBtn').disabled = false; 
       document.getElementById('enhanceBtn').disabled = false;
     }
 
@@ -1337,9 +1232,32 @@
       }
     }
 
-    // Preset dimensions
+    // Enhanced size preset functionality
+    function setTargetSize(sizeKB) {
+      // Remove active class from all presets
+      document.querySelectorAll('.size-preset').forEach(p => p.classList.remove('active'));
+      // Add active class to clicked preset
+      event.target.classList.add('active');
+      
+      // Set target size and show relevant options
+      document.getElementById('resizePreset').value = 'targetSize';
+      document.getElementById('targetSize').value = sizeKB;
+      document.getElementById('targetSizeGroup').style.display = 'block';
+      
+      logActivity(`Selected target size: ${sizeKB}KB`);
+    }
+
+    // Updated dimensions function
     function updateDimensions() {
       const preset = document.getElementById('resizePreset').value;
+      const targetSizeGroup = document.getElementById('targetSizeGroup');
+      
+      if (preset === 'targetSize') {
+        targetSizeGroup.style.display = 'block';
+      } else {
+        targetSizeGroup.style.display = 'none';
+      }
+      
       const presets = {
         instagram: { width: 1080, height: 1080 },
         facebook: { width: 820, height: 312 },
@@ -1363,7 +1281,7 @@
       document.getElementById('intensityValue').textContent = value;
     }
 
-    // Image processing
+    // Enhanced image processing with target file size
     function processImage(type) {
       if (!currentImage) return;
 
@@ -1374,14 +1292,29 @@
         const ctx = canvas.getContext('2d');
 
         if (type === 'resize') {
-          const width = parseInt(document.getElementById('width').value) || currentImage.width;
-          const height = parseInt(document.getElementById('height').value) || currentImage.height;
+          const preset = document.getElementById('resizePreset').value;
           
-          canvas.width = width;
-          canvas.height = height;
-          ctx.drawImage(currentImage, 0, 0, width, height);
-          
-          logActivity(`Image resized to ${width}x${height}`);
+          if (preset === 'targetSize') {
+            const targetKB = parseInt(document.getElementById('targetSize').value);
+            if (targetKB) {
+              processedImage = resizeToTargetSize(currentImage, targetKB);
+              logActivity(`Image resized to target size: ${targetKB}KB`);
+            } else {
+              alert('Please enter a target size in KB');
+              hideProgress();
+              return;
+            }
+          } else {
+            const width = parseInt(document.getElementById('width').value) || currentImage.width;
+            const height = parseInt(document.getElementById('height').value) || currentImage.height;
+            
+            canvas.width = width;
+            canvas.height = height;
+            ctx.drawImage(currentImage, 0, 0, width, height);
+            processedImage = canvas.toDataURL();
+            
+            logActivity(`Image resized to ${width}x${height}`);
+          }
           
         } else if (type === 'compress') {
           canvas.width = currentImage.width;
@@ -1405,12 +1338,9 @@
           }
           
           ctx.drawImage(currentImage, 0, 0);
+          processedImage = canvas.toDataURL();
           
           logActivity(`Image enhanced with ${filter} filter`);
-        }
-
-        if (type !== 'compress') {
-          processedImage = canvas.toDataURL();
         }
 
         hideProgress();
@@ -1427,6 +1357,40 @@
         saveLogsLocally();
         
       }, 1000);
+    }
+
+    // Function to resize image to target file size
+    function resizeToTargetSize(image, targetKB) {
+      const targetBytes = targetKB * 1024;
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      
+      // Start with original dimensions
+      let width = image.width;
+      let height = image.height;
+      let quality = 0.9;
+      let result = null;
+      
+      // Binary search approach to find optimal dimensions and quality
+      for (let i = 0; i < 10; i++) {
+        canvas.width = width;
+        canvas.height = height;
+        ctx.drawImage(image, 0, 0, width, height);
+        
+        result = canvas.toDataURL('image/jpeg', quality);
+        const currentSize = atob(result.split(',')[1]).length;
+        
+        if (currentSize <= targetBytes) {
+          break;
+        }
+        
+        // Reduce dimensions by 10%
+        width *= 0.9;
+        height *= 0.9;
+        quality *= 0.95;
+      }
+      
+      return result;
     }
 
     function showProgress() {
@@ -1520,7 +1484,46 @@
       }
     });
 
-    // Enhanced logging function with proper activity tracking
+    // Logging functions
+    function initLogging() {
+      const visitor = {
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        referrer: document.referrer,
+        sessionId: generateSessionId()
+      };
+      logs.visitors.push(visitor);
+      
+      const today = new Date().toDateString();
+      let dailyLog = logs.daily.find(d => d.date === today);
+      if (!dailyLog) {
+        dailyLog = { date: today, visits: 0, resizes: 0, compressions: 0, enhancements: 0 };
+        logs.daily.push(dailyLog);
+      }
+      dailyLog.visits++;
+      
+      saveLogsLocally();
+    }
+
+    function generateSessionId() {
+      return Math.random().toString(36).substr(2, 9);
+    }
+
+    function loadLogs() {
+      const savedLogs = localStorage.getItem('pixmorph_logs');
+      if (savedLogs) {
+        logs = JSON.parse(savedLogs);
+      }
+    }
+
+    function saveLogsLocally() {
+      try {
+        localStorage.setItem('pixmorph_logs', JSON.stringify(logs));
+      } catch (error) {
+        console.warn('Failed to save logs locally:', error);
+      }
+    }
+
     function logActivity(activity) {
       const logEntry = {
         timestamp: new Date().toISOString(),
@@ -1529,23 +1532,12 @@
         url: window.location.href
       };
       
-      // Initialize activities array if not exists
       if (!logs.activities) {
         logs.activities = [];
       }
       
-      // Add to activities log
       logs.activities.push(logEntry);
-      
-      console.log('Activity:', activity);
-      
-      // Save logs locally and attempt GitHub sync
-      try {
-        saveLogsLocally();
-        syncWithGitHub();
-      } catch (error) {
-        console.log('Logging error:', error);
-      }
+      saveLogsLocally();
     }
 
     // Format file size
