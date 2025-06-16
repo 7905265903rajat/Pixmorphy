@@ -4,26 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PixMorph - Professional Image Editor | Resize, Compress & Enhance Images Online</title>
-  <meta name="description" content="Professional online image editor to resize, compress and enhance photos. Free image resizer for social media, web optimization. Works on all devices - no software needed." />
+  <title>Free Image Compressor & Resizer Online | PixMorphy</title>
+  <meta name="description" content="Compress and resize images instantly for Instagram, YouTube, Facebook & more. Fast, free, and high-quality photo editing online with PixMorphy." />
   <meta name="keywords" content="resize image to 20KB, resize image to 100kb, resize image to 50kb, reduce image size in KB, image resizer for Windows, image resizer free, resize image to 200kb, image resize in KB, image resizer online, compress image without losing quality, reduce image size online, image compressor online free, online photo resizer, best image compressor, resize image for Instagram, convert image to specific dimensions, online tool to resize image, compress JPEG image online, image size reducer online, resize image for LinkedIn profile, compress image for website, reduce PNG file size online, photo compressor tool, online image editor, resize image for social media, compress photos online, reduce file size, image optimization tool, free image resizer, photo editor online, batch image resizer, smart image compression, lossless image compression, image format converter, web image optimizer, social media image sizes, profile picture resizer, banner image creator, thumbnail generator, image quality enhancer, photo filter tool, brightness contrast editor, saturation adjustment tool, professional photo editing, online image studio, quick image editor, mobile image editor, desktop image tool, cross-platform image editor" />
   <meta name="author" content="Rajat Gupta" />
   <meta name="robots" content="index, follow" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pixmorph.netlify.app/" />
-  <meta property="og:title" content="PixMorph - Professional Image Editor | Resize Images Online" />
-  <meta property="og:description" content="Professional online image editor to resize, compress and enhance photos. Free image resizer for social media, web optimization." />
+  <meta property="og:url" content="https://pixmorphy.netlify.app/" />
+  <meta property="og:title" content="Free Image Compressor & Resizer Online | PixMorphy" />
+  <meta property="og:description" content="Compress and resize images instantly for Instagram, YouTube, Facebook & more. Fast, free, and high-quality photo editing online with PixMorphy." />
   <meta property="og:image" content="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" />
   <meta property="og:image:width" content="800" />
   <meta property="og:image:height" content="600" />
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://pixmorph.netlify.app/" />
-  <meta property="twitter:title" content="PixMorph - Professional Image Editor | Resize Images Online" />
-  <meta property="twitter:description" content="Professional online image editor to resize, compress and enhance photos. Free image resizer for social media, web optimization." />
+  <meta property="twitter:url" content="https://pixmorphy.netlify.app/" />
+  <meta property="twitter:title" content="Free Image Compressor & Resizer Online | PixMorphy" />
+  <meta property="twitter:description" content="Compress and resize images instantly for Instagram, YouTube, Facebook & more. Fast, free, and high-quality photo editing online with PixMorphy." />
   <meta property="twitter:image" content="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" />
   
   <!-- Favicon -->
@@ -35,10 +35,10 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "PixMorph - Professional Image Editor",
+    "name": "PixMorphy - Free Image Compressor & Resizer",
     "alternateName": "Image Resizer Online",
-    "description": "Professional online image editor to resize, compress and enhance photos. Free image resizer for social media, web optimization.",
-    "url": "https://pixmorph.netlify.app/",
+    "description": "Compress and resize images instantly for Instagram, YouTube, Facebook & more. Fast, free, and high-quality photo editing online with PixMorphy.",
+    "url": "https://pixmorphy.netlify.app/",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Any",
     "offers": {
@@ -727,6 +727,29 @@
         margin-right: 1rem;
       }
     }
+
+    /* SEO Content Styling */
+    .seo-content {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .seo-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .seo-content p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -736,7 +759,7 @@
         <a href="#" class="logo" onclick="navigateToHome()">
           <div class="logo-icon">
             <img src="https://raw.githubusercontent.com/7905265903rajat/Pixmorphy/main/pixmorph_logo.PNG" 
-                 alt="PixMorph Logo" 
+                 alt="PixMorphy Logo" 
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                  onload="this.nextElementSibling.style.display='none';">
             <div class="logo-fallback">
@@ -744,8 +767,8 @@
             </div>
           </div>
           <div class="logo-text">
-            <h1>PixMorph</h1>
-            <p>Professional Image Editor</p>
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--text); margin: 0;">PixMorphy</h2>
+            <p>Free Image Editor</p>
           </div>
         </a>
         <div class="header-actions">
@@ -765,8 +788,10 @@
       <!-- Home Page -->
       <div id="home-page">
         <div class="hero">
-          <h1>Professional Image Editor & Resizer</h1>
-          <p>Resize images to 20KB, 50KB, 100KB, or 200KB. Free image resizer for Windows and all devices. Compress and enhance your photos with our professional online tools.</p>
+          <h1>Compress & Resize Photos Online — Perfectly Optimized for Every Platform</h1>
+          <div class="seo-content">
+            <p>PixMorphy is a free online image editing tool that helps you compress photos without losing quality and resize images for Instagram, YouTube, Facebook, and more. Whether you're a creator, student, or marketer, PixMorphy makes image optimization fast, easy, and platform-ready.</p>
+          </div>
         </div>
 
         <div class="feature-grid">
@@ -774,25 +799,31 @@
             <div class="feature-icon">
               <i class="fas fa-expand-arrows-alt"></i>
             </div>
-            <h3>Image Resizer</h3>
-            <p>Resize images to specific KB sizes (20KB, 50KB, 100KB, 200KB). Perfect for social media, websites, and reducing file size in KB.</p>
+            <h3>Free Image Resizer</h3>
+            <p>Resize images to specific KB sizes (20KB, 50KB, 100KB, 200KB). Perfect for social media, websites, and reducing file size in KB. Works on all devices including Windows.</p>
           </div>
 
           <div class="feature-card" onclick="navigateToTool('compress')">
             <div class="feature-icon">
               <i class="fas fa-compress-alt"></i>
             </div>
-            <h3>Image Compressor</h3>
-            <p>Reduce image file size without losing quality. Free image compressor for web optimization and faster loading times.</p>
+            <h3>Compress Images Without Losing Quality</h3>
+            <p>Reduce image file size without losing quality. Free image compressor for web optimization and faster loading times. Perfect for Instagram, YouTube, and Facebook.</p>
           </div>
 
           <div class="feature-card" onclick="navigateToTool('enhance')">
             <div class="feature-icon">
               <i class="fas fa-magic"></i>
             </div>
-            <h3>Image Enhancer</h3>
-            <p>Apply professional filters and effects to improve your photos. Brightness, contrast, saturation adjustments and more.</p>
+            <h3>Photo Resizer for Instagram</h3>
+            <p>Apply professional filters and effects to improve your photos. Brightness, contrast, saturation adjustments optimized for social media platforms.</p>
           </div>
+        </div>
+
+        <!-- Internal Links Section -->
+        <div class="seo-content">
+          <h2>Professional Online Image Editor India</h2>
+          <p>Get started with our powerful image editing tools. <a href="#resize" onclick="navigateToTool('resize')" style="color: var(--primary); text-decoration: none;">Resize images online</a> for free, <a href="#compress" onclick="navigateToTool('compress')" style="color: var(--primary); text-decoration: none;">compress photos</a> without quality loss, or <a href="#enhance" onclick="navigateToTool('enhance')" style="color: var(--primary); text-decoration: none;">enhance your images</a> with professional filters. All tools work directly in your browser with no software installation required.</p>
         </div>
       </div>
 
@@ -1014,8 +1045,8 @@
   <!-- About Modal -->
   <div id="aboutModal" class="modal hidden">
     <div class="modal-content">
-      <h3>About PixMorph</h3>
-      <p>PixMorph is a professional online image editor that allows you to resize, compress, and enhance your images directly in your browser. No software installation required!</p>
+      <h3>About PixMorphy</h3>
+      <p>PixMorphy is a free online image editing tool that helps you compress photos without losing quality and resize images for Instagram, YouTube, Facebook, and more.</p>
       
       <h4>Features:</h4>
       <ul>
@@ -1039,13 +1070,13 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-links">
-        <a href="#resize" onclick="navigateToTool('resize')">Image Resizer</a>
+        <a href="#resize" onclick="navigateToTool('resize')">Free Image Resizer</a>
         <a href="#compress" onclick="navigateToTool('compress')">Image Compressor</a>
-        <a href="#enhance" onclick="navigateToTool('enhance')">Image Enhancer</a>
+        <a href="#enhance" onclick="navigateToTool('enhance')">Photo Resizer for Instagram</a>
         <a href="#" onclick="showFeedback()">Feedback</a>
-        <a href="mailto:support@pixmorph.com">Contact</a>
+        <a href="mailto:support@pixmorphy.com">Contact</a>
       </div>
-      <p>&copy; 2024 PixMorph. Created by Rajat Gupta. All rights reserved.</p>
+      <p>&copy; 2024 PixMorphy. Created by Rajat Gupta. All rights reserved.</p>
     </div>
   </footer>
 
@@ -1064,7 +1095,7 @@
     function navigateToHome() {
       showHome();
       updateURL('/');
-      updatePageTitle('PixMorph - Professional Image Editor | Resize Images Online');
+      updatePageTitle('Free Image Compressor & Resizer Online | PixMorphy');
     }
 
     function navigateToTool(tool) {
@@ -1072,12 +1103,12 @@
       updateURL('/' + tool);
       
       const titles = {
-        'resize': 'Image Resizer - Resize to 20KB, 50KB, 100KB, 200KB | PixMorph',
-        'compress': 'Image Compressor - Reduce File Size Without Quality Loss | PixMorph', 
-        'enhance': 'Image Enhancer - Professional Photo Filters & Effects | PixMorph'
+        'resize': 'Free Image Resizer - Resize to 20KB, 50KB, 100KB, 200KB | PixMorphy',
+        'compress': 'Image Compressor - Compress Images Without Losing Quality | PixMorphy', 
+        'enhance': 'Photo Resizer for Instagram - Professional Filters | PixMorphy'
       };
       
-      updatePageTitle(titles[tool] || 'PixMorph - Professional Image Editor');
+      updatePageTitle(titles[tool] || 'Free Image Compressor & Resizer Online | PixMorphy');
     }
 
     function updateURL(path) {
@@ -1423,7 +1454,7 @@
       if (!processedImage) return;
 
       const link = document.createElement('a');
-      link.download = `pixmorph-${Date.now()}.png`;
+      link.download = `pixmorphy-${Date.now()}.png`;
       link.href = processedImage;
       document.body.appendChild(link);
       link.click();
@@ -1510,7 +1541,7 @@
     }
 
     function loadLogs() {
-      const savedLogs = localStorage.getItem('pixmorph_logs');
+      const savedLogs = localStorage.getItem('pixmorphy_logs');
       if (savedLogs) {
         logs = JSON.parse(savedLogs);
       }
@@ -1518,7 +1549,7 @@
 
     function saveLogsLocally() {
       try {
-        localStorage.setItem('pixmorph_logs', JSON.stringify(logs));
+        localStorage.setItem('pixmorphy_logs', JSON.stringify(logs));
       } catch (error) {
         console.warn('Failed to save logs locally:', error);
       }
